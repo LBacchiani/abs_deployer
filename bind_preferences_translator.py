@@ -67,7 +67,7 @@ class MyVisitor(BindPreferenceGrammarVisitor):
         name = ctx.getChild(0).accept(self)
         if name in self.name_into_obj:
             return "'" + self.name_into_obj[name] + "'"
-        assert(self.class_names[name])
+        assert self.class_names[name]
         return "'" + self.class_names[name][0] + settings.SEPARATOR + name + "'"
 
     def visitAobjIDScenario(self, ctx):
@@ -82,7 +82,7 @@ class MyVisitor(BindPreferenceGrammarVisitor):
                 matches.append(i)
         if not matches:
             raise SpecificationParsingException("The regular expression " +
-                                                   str(pattern) + " does not match with any scenario")
+                                                str(pattern) + " does not match with any scenario")
         s = "'[" + matches[0] + settings.SEPARATOR + class_name + "]"
         for i in matches[1:]:
             s += '|[' + i + settings.SEPARATOR + class_name + "]"
@@ -96,7 +96,7 @@ class MyVisitor(BindPreferenceGrammarVisitor):
             return txt
 
 
-def translate_preference(s,name_into_DC, name_into_obj, class_names):
+def translate_preference(s, name_into_DC, name_into_obj, class_names):
 
     lexer = BindPreferenceGrammarLexer(InputStream(s))
     stream = CommonTokenStream(lexer)

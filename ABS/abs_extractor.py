@@ -19,9 +19,9 @@ import sys
 from antlr4 import *
 
 import settings
-from ABSLexer import ABSLexer
-from ABSParser import ABSParser
-from ABSVisitor import ABSVisitor
+from ABS.ABSLexer import ABSLexer
+from ABS.ABSParser import ABSParser
+from ABS.ABSVisitor import ABSVisitor
 
 # to allow the use of symmetry breaking constraints use a fictional resource
 # associated to every different type of DC

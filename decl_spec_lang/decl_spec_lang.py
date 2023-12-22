@@ -19,9 +19,9 @@ import sys
 from antlr4 import *
 
 import settings
-from DeclSpecLanguageLexer import DeclSpecLanguageLexer
-from DeclSpecLanguageParser import DeclSpecLanguageParser
-from DeclSpecLanguageVisitor import DeclSpecLanguageVisitor
+from decl_spec_lang.DeclSpecLanguageLexer import DeclSpecLanguageLexer
+from decl_spec_lang.DeclSpecLanguageParser import DeclSpecLanguageParser
+from decl_spec_lang.DeclSpecLanguageVisitor import DeclSpecLanguageVisitor
 
 
 class DeclSpecLanguageParsingException(Exception):
@@ -159,7 +159,7 @@ def translate_specification(file_stream, name_into_DC, name_into_obj, class_name
     #   initial obj installed only in one amount and in initial_DC
     for i in name_into_obj.values():
         spec += " and (" + i + " = 1)"
-        spec += " and (" + settings.DEFAULT_INITIAL_DC.keys()[0] + "[0]." + i + "= 1)"
+        spec += " and (" + list(settings.DEFAULT_INITIAL_DC.keys())[0] + "[0]." + i + "= 1)"
     # add preference: minimize cost and then number of components
     spec += "; cost; sum ?x in locations : (sum ?y in components: ?x.?y)"
     return spec
