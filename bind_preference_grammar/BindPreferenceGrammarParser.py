@@ -1,66 +1,64 @@
-# Generated from BindPreferenceGrammar.g4 by ANTLR 4.7
+# Generated from /Users/lorenzobacchiani/Desktop/abs_deployer/bind_preference_grammar/BindPreferenceGrammar.g4 by ANTLR 4.13.1
 # encoding: utf-8
-from __future__ import print_function
 from antlr4 import *
 from io import StringIO
 import sys
+if sys.version_info[1] > 5:
+	from typing import TextIO
+else:
+	from typing.io import TextIO
 
 def serializedATN():
-    with StringIO() as buf:
-        buf.write(u"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3")
-        buf.write(u")\u0097\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t")
-        buf.write(u"\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r")
-        buf.write(u"\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4")
-        buf.write(u"\23\t\23\3\2\3\2\3\2\3\3\3\3\5\3,\n\3\3\4\3\4\3\4\3\4")
-        buf.write(u"\7\4\62\n\4\f\4\16\4\65\13\4\3\5\5\58\n\5\3\5\3\5\3\6")
-        buf.write(u"\3\6\5\6>\n\6\3\7\3\7\3\7\3\7\5\7D\n\7\3\b\3\b\3\b\3")
-        buf.write(u"\b\7\bJ\n\b\f\b\16\bM\13\b\3\t\3\t\3\t\3\t\3\t\5\tT\n")
-        buf.write(u"\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
-        buf.write(u"\t\3\t\3\t\3\t\5\tf\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
-        buf.write(u"\t\3\t\3\t\3\t\3\t\5\tt\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3")
-        buf.write(u"\n\3\n\3\n\3\n\3\n\5\n\u0081\n\n\3\13\3\13\5\13\u0085")
-        buf.write(u"\n\13\3\f\3\f\3\r\3\r\3\16\3\16\3\17\3\17\3\20\3\20\3")
-        buf.write(u"\21\3\21\3\22\3\22\3\23\3\23\3\23\2\2\24\2\4\6\b\n\f")
-        buf.write(u"\16\20\22\24\26\30\32\34\36 \"$\2\7\3\2\26\27\4\2\17")
-        buf.write(u"\20\24\25\3\2 \"\3\2\32\37\3\2\22\23\2\u0095\2&\3\2\2")
-        buf.write(u"\2\4+\3\2\2\2\6-\3\2\2\2\b\67\3\2\2\2\n=\3\2\2\2\f?\3")
-        buf.write(u"\2\2\2\16E\3\2\2\2\20s\3\2\2\2\22\u0080\3\2\2\2\24\u0084")
-        buf.write(u"\3\2\2\2\26\u0086\3\2\2\2\30\u0088\3\2\2\2\32\u008a\3")
-        buf.write(u"\2\2\2\34\u008c\3\2\2\2\36\u008e\3\2\2\2 \u0090\3\2\2")
-        buf.write(u"\2\"\u0092\3\2\2\2$\u0094\3\2\2\2&\'\5\4\3\2\'(\7\2\2")
-        buf.write(u"\3(\3\3\2\2\2),\7\3\2\2*,\5\16\b\2+)\3\2\2\2+*\3\2\2")
-        buf.write(u"\2,\5\3\2\2\2-\63\5\b\5\2./\5\26\f\2/\60\5\b\5\2\60\62")
-        buf.write(u"\3\2\2\2\61.\3\2\2\2\62\65\3\2\2\2\63\61\3\2\2\2\63\64")
-        buf.write(u"\3\2\2\2\64\7\3\2\2\2\65\63\3\2\2\2\668\5\36\20\2\67")
-        buf.write(u"\66\3\2\2\2\678\3\2\2\289\3\2\2\29:\5\n\6\2:\t\3\2\2")
-        buf.write(u"\2;>\5 \21\2<>\5\f\7\2=;\3\2\2\2=<\3\2\2\2>\13\3\2\2")
-        buf.write(u"\2?C\5\16\b\2@A\5\34\17\2AB\5\16\b\2BD\3\2\2\2C@\3\2")
-        buf.write(u"\2\2CD\3\2\2\2D\r\3\2\2\2EK\5\20\t\2FG\5\30\r\2GH\5\20")
-        buf.write(u"\t\2HJ\3\2\2\2IF\3\2\2\2JM\3\2\2\2KI\3\2\2\2KL\3\2\2")
-        buf.write(u"\2L\17\3\2\2\2MK\3\2\2\2NO\t\2\2\2OS\5\"\22\2PQ\7\4\2")
-        buf.write(u"\2QR\7\5\2\2RT\5\22\n\2SP\3\2\2\2ST\3\2\2\2TU\3\2\2\2")
-        buf.write(u"UV\7\6\2\2VW\5\24\13\2WX\7\7\2\2XY\5\6\4\2Yt\3\2\2\2")
-        buf.write(u"Zt\7(\2\2[\\\5\"\22\2\\]\7\b\2\2]^\7\t\2\2^_\5\"\22\2")
-        buf.write(u"_t\3\2\2\2`a\7\30\2\2ae\5\"\22\2bc\7\4\2\2cd\7\5\2\2")
-        buf.write(u"df\5\22\n\2eb\3\2\2\2ef\3\2\2\2fg\3\2\2\2gh\7\6\2\2h")
-        buf.write(u"i\5\24\13\2ij\7\7\2\2jk\5\16\b\2kt\3\2\2\2lm\5\32\16")
-        buf.write(u"\2mn\5\16\b\2nt\3\2\2\2op\7\n\2\2pq\5\6\4\2qr\7\13\2")
-        buf.write(u"\2rt\3\2\2\2sN\3\2\2\2sZ\3\2\2\2s[\3\2\2\2s`\3\2\2\2")
-        buf.write(u"sl\3\2\2\2so\3\2\2\2t\21\3\2\2\2u\u0081\7\'\2\2v\u0081")
-        buf.write(u"\5\"\22\2wx\7\'\2\2xy\7\f\2\2yz\7\'\2\2z\u0081\7\r\2")
-        buf.write(u"\2{|\7\'\2\2|}\7\f\2\2}~\5$\23\2~\177\7\r\2\2\177\u0081")
-        buf.write(u"\3\2\2\2\u0080u\3\2\2\2\u0080v\3\2\2\2\u0080w\3\2\2\2")
-        buf.write(u"\u0080{\3\2\2\2\u0081\23\3\2\2\2\u0082\u0085\7%\2\2\u0083")
-        buf.write(u"\u0085\5$\23\2\u0084\u0082\3\2\2\2\u0084\u0083\3\2\2")
-        buf.write(u"\2\u0085\25\3\2\2\2\u0086\u0087\t\3\2\2\u0087\27\3\2")
-        buf.write(u"\2\2\u0088\u0089\t\4\2\2\u0089\31\3\2\2\2\u008a\u008b")
-        buf.write(u"\7#\2\2\u008b\33\3\2\2\2\u008c\u008d\t\5\2\2\u008d\35")
-        buf.write(u"\3\2\2\2\u008e\u008f\7\21\2\2\u008f\37\3\2\2\2\u0090")
-        buf.write(u"\u0091\t\6\2\2\u0091!\3\2\2\2\u0092\u0093\7&\2\2\u0093")
-        buf.write(u"#\3\2\2\2\u0094\u0095\7\16\2\2\u0095%\3\2\2\2\r+\63\67")
-        buf.write(u"=CKSes\u0080\u0084")
-        return buf.getvalue()
-
+    return [
+        4,1,39,149,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
+        2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,1,0,1,0,1,0,1,1,1,1,3,1,
+        42,8,1,1,2,1,2,1,2,1,2,5,2,48,8,2,10,2,12,2,51,9,2,1,3,3,3,54,8,
+        3,1,3,1,3,1,4,1,4,3,4,60,8,4,1,5,1,5,1,5,1,5,3,5,66,8,5,1,6,1,6,
+        1,6,1,6,5,6,72,8,6,10,6,12,6,75,9,6,1,7,1,7,1,7,1,7,1,7,3,7,82,8,
+        7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,
+        7,3,7,100,8,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,3,
+        7,114,8,7,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,3,8,127,8,
+        8,1,9,1,9,3,9,131,8,9,1,10,1,10,1,11,1,11,1,12,1,12,1,13,1,13,1,
+        14,1,14,1,15,1,15,1,16,1,16,1,17,1,17,1,17,0,0,18,0,2,4,6,8,10,12,
+        14,16,18,20,22,24,26,28,30,32,34,0,5,1,0,20,21,2,0,13,14,18,19,1,
+        0,30,32,1,0,24,29,1,0,16,17,147,0,36,1,0,0,0,2,41,1,0,0,0,4,43,1,
+        0,0,0,6,53,1,0,0,0,8,59,1,0,0,0,10,61,1,0,0,0,12,67,1,0,0,0,14,113,
+        1,0,0,0,16,126,1,0,0,0,18,130,1,0,0,0,20,132,1,0,0,0,22,134,1,0,
+        0,0,24,136,1,0,0,0,26,138,1,0,0,0,28,140,1,0,0,0,30,142,1,0,0,0,
+        32,144,1,0,0,0,34,146,1,0,0,0,36,37,3,2,1,0,37,38,5,0,0,1,38,1,1,
+        0,0,0,39,42,5,1,0,0,40,42,3,12,6,0,41,39,1,0,0,0,41,40,1,0,0,0,42,
+        3,1,0,0,0,43,49,3,6,3,0,44,45,3,20,10,0,45,46,3,6,3,0,46,48,1,0,
+        0,0,47,44,1,0,0,0,48,51,1,0,0,0,49,47,1,0,0,0,49,50,1,0,0,0,50,5,
+        1,0,0,0,51,49,1,0,0,0,52,54,3,28,14,0,53,52,1,0,0,0,53,54,1,0,0,
+        0,54,55,1,0,0,0,55,56,3,8,4,0,56,7,1,0,0,0,57,60,3,30,15,0,58,60,
+        3,10,5,0,59,57,1,0,0,0,59,58,1,0,0,0,60,9,1,0,0,0,61,65,3,12,6,0,
+        62,63,3,26,13,0,63,64,3,12,6,0,64,66,1,0,0,0,65,62,1,0,0,0,65,66,
+        1,0,0,0,66,11,1,0,0,0,67,73,3,14,7,0,68,69,3,22,11,0,69,70,3,14,
+        7,0,70,72,1,0,0,0,71,68,1,0,0,0,72,75,1,0,0,0,73,71,1,0,0,0,73,74,
+        1,0,0,0,74,13,1,0,0,0,75,73,1,0,0,0,76,77,7,0,0,0,77,81,3,32,16,
+        0,78,79,5,2,0,0,79,80,5,3,0,0,80,82,3,16,8,0,81,78,1,0,0,0,81,82,
+        1,0,0,0,82,83,1,0,0,0,83,84,5,4,0,0,84,85,3,18,9,0,85,86,5,5,0,0,
+        86,87,3,4,2,0,87,114,1,0,0,0,88,114,5,38,0,0,89,90,3,32,16,0,90,
+        91,5,6,0,0,91,92,5,7,0,0,92,93,3,32,16,0,93,114,1,0,0,0,94,95,5,
+        22,0,0,95,99,3,32,16,0,96,97,5,2,0,0,97,98,5,3,0,0,98,100,3,16,8,
+        0,99,96,1,0,0,0,99,100,1,0,0,0,100,101,1,0,0,0,101,102,5,4,0,0,102,
+        103,3,18,9,0,103,104,5,5,0,0,104,105,3,12,6,0,105,114,1,0,0,0,106,
+        107,3,24,12,0,107,108,3,12,6,0,108,114,1,0,0,0,109,110,5,8,0,0,110,
+        111,3,4,2,0,111,112,5,9,0,0,112,114,1,0,0,0,113,76,1,0,0,0,113,88,
+        1,0,0,0,113,89,1,0,0,0,113,94,1,0,0,0,113,106,1,0,0,0,113,109,1,
+        0,0,0,114,15,1,0,0,0,115,127,5,37,0,0,116,127,3,32,16,0,117,118,
+        5,37,0,0,118,119,5,10,0,0,119,120,5,37,0,0,120,127,5,11,0,0,121,
+        122,5,37,0,0,122,123,5,10,0,0,123,124,3,34,17,0,124,125,5,11,0,0,
+        125,127,1,0,0,0,126,115,1,0,0,0,126,116,1,0,0,0,126,117,1,0,0,0,
+        126,121,1,0,0,0,127,17,1,0,0,0,128,131,5,35,0,0,129,131,3,34,17,
+        0,130,128,1,0,0,0,130,129,1,0,0,0,131,19,1,0,0,0,132,133,7,1,0,0,
+        133,21,1,0,0,0,134,135,7,2,0,0,135,23,1,0,0,0,136,137,5,33,0,0,137,
+        25,1,0,0,0,138,139,7,3,0,0,139,27,1,0,0,0,140,141,5,15,0,0,141,29,
+        1,0,0,0,142,143,7,4,0,0,143,31,1,0,0,0,144,145,5,36,0,0,145,33,1,
+        0,0,0,146,147,5,12,0,0,147,35,1,0,0,0,11,41,49,53,59,65,73,81,99,
+        113,126,130
+    ]
 
 class BindPreferenceGrammarParser ( Parser ):
 
@@ -72,22 +70,20 @@ class BindPreferenceGrammarParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ u"<INVALID>", u"'local'", u"'of'", u"'type'", u"'in'", 
-                     u"':'", u"'used'", u"'by'", u"'('", u"')'", u"'['", 
-                     u"']'", u"<INVALID>", u"'and'", u"'or'", u"'not'", 
-                     u"'true'", u"'false'", u"'impl'", u"'iff'", u"'exists'", 
-                     u"'forall'", u"'sum'", u"'cost'", u"'<='", u"'='", 
-                     u"'>='", u"'<'", u"'>'", u"'!='", u"'+'", u"'-'", u"'*'", 
-                     u"'abs'", u"'obj'", u"'DC'" ]
+    literalNames = [ "<INVALID>", "'local'", "'of'", "'type'", "'in'", "':'", 
+                     "'used'", "'by'", "'('", "')'", "'['", "']'", "<INVALID>", 
+                     "'and'", "'or'", "'not'", "'true'", "'false'", "'impl'", 
+                     "'iff'", "'exists'", "'forall'", "'sum'", "'cost'", 
+                     "'<='", "'='", "'>='", "'<'", "'>'", "'!='", "'+'", 
+                     "'-'", "'*'", "'abs'", "'obj'", "'DC'" ]
 
-    symbolicNames = [ u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"RE", u"AND", u"OR", u"NOT", u"TRUE", u"FALSE", u"IMPL", 
-                      u"IFF", u"EXISTS", u"FORALL", u"SUM", u"COST", u"LEQ", 
-                      u"EQ", u"GEQ", u"LT", u"GT", u"NEQ", u"PLUS", u"MINUS", 
-                      u"TIMES", u"ABS", u"OBJ", u"DC", u"VARIABLE", u"ID", 
-                      u"INT", u"WS" ]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "RE", "AND", "OR", "NOT", "TRUE", "FALSE", "IMPL", 
+                      "IFF", "EXISTS", "FORALL", "SUM", "COST", "LEQ", "EQ", 
+                      "GEQ", "LT", "GT", "NEQ", "PLUS", "MINUS", "TIMES", 
+                      "ABS", "OBJ", "DC", "VARIABLE", "ID", "INT", "WS" ]
 
     RULE_statement = 0
     RULE_preference = 1
@@ -108,10 +104,10 @@ class BindPreferenceGrammarParser ( Parser ):
     RULE_variable = 16
     RULE_re = 17
 
-    ruleNames =  [ u"statement", u"preference", u"b_expr", u"b_term", u"b_factor", 
-                   u"relation", u"expr", u"term", u"objId", u"typeV", u"bool_binary_op", 
-                   u"arith_binary_op", u"arith_unary_op", u"comparison_op", 
-                   u"unaryOp", u"boolFact", u"variable", u"re" ]
+    ruleNames =  [ "statement", "preference", "b_expr", "b_term", "b_factor", 
+                   "relation", "expr", "term", "objId", "typeV", "bool_binary_op", 
+                   "arith_binary_op", "arith_unary_op", "comparison_op", 
+                   "unaryOp", "boolFact", "variable", "re" ]
 
     EOF = Token.EOF
     T__0=1
@@ -154,18 +150,20 @@ class BindPreferenceGrammarParser ( Parser ):
     INT=38
     WS=39
 
-    def __init__(self, input, output=sys.stdout):
-        super(BindPreferenceGrammarParser, self).__init__(input, output=output)
-        self.checkVersion("4.7")
+    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
+        super().__init__(input, output)
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
 
 
-    class StatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.StatementContext, self).__init__(parent, invokingState)
+    class StatementContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def preference(self):
@@ -178,8 +176,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_statement
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitStatement"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterStatement" ):
+                listener.enterStatement(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitStatement" ):
+                listener.exitStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStatement" ):
                 return visitor.visitStatement(self)
             else:
                 return visitor.visitChildren(self)
@@ -205,10 +211,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class PreferenceContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.PreferenceContext, self).__init__(parent, invokingState)
+    class PreferenceContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
 
@@ -216,23 +224,31 @@ class BindPreferenceGrammarParser ( Parser ):
             return BindPreferenceGrammarParser.RULE_preference
 
      
-        def copyFrom(self, ctx):
-            super(BindPreferenceGrammarParser.PreferenceContext, self).copyFrom(ctx)
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
 
 
     class ApreferenceExprContext(PreferenceContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.PreferenceContext)
-            super(BindPreferenceGrammarParser.ApreferenceExprContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.PreferenceContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def expr(self):
             return self.getTypedRuleContext(BindPreferenceGrammarParser.ExprContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitApreferenceExpr"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterApreferenceExpr" ):
+                listener.enterApreferenceExpr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitApreferenceExpr" ):
+                listener.exitApreferenceExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitApreferenceExpr" ):
                 return visitor.visitApreferenceExpr(self)
             else:
                 return visitor.visitChildren(self)
@@ -240,13 +256,21 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class ApreferenceLocalContext(PreferenceContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.PreferenceContext)
-            super(BindPreferenceGrammarParser.ApreferenceLocalContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.PreferenceContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitApreferenceLocal"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterApreferenceLocal" ):
+                listener.enterApreferenceLocal(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitApreferenceLocal" ):
+                listener.exitApreferenceLocal(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitApreferenceLocal" ):
                 return visitor.visitApreferenceLocal(self)
             else:
                 return visitor.visitChildren(self)
@@ -261,13 +285,13 @@ class BindPreferenceGrammarParser ( Parser ):
             self.state = 41
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [BindPreferenceGrammarParser.T__0]:
+            if token in [1]:
                 localctx = BindPreferenceGrammarParser.ApreferenceLocalContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 39
                 self.match(BindPreferenceGrammarParser.T__0)
                 pass
-            elif token in [BindPreferenceGrammarParser.T__7, BindPreferenceGrammarParser.EXISTS, BindPreferenceGrammarParser.FORALL, BindPreferenceGrammarParser.SUM, BindPreferenceGrammarParser.ABS, BindPreferenceGrammarParser.VARIABLE, BindPreferenceGrammarParser.INT]:
+            elif token in [8, 20, 21, 22, 33, 36, 38]:
                 localctx = BindPreferenceGrammarParser.ApreferenceExprContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 40
@@ -284,20 +308,22 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class B_exprContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.B_exprContext, self).__init__(parent, invokingState)
+    class B_exprContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
-        def b_term(self, i=None):
+        def b_term(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(BindPreferenceGrammarParser.B_termContext)
             else:
                 return self.getTypedRuleContext(BindPreferenceGrammarParser.B_termContext,i)
 
 
-        def bool_binary_op(self, i=None):
+        def bool_binary_op(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(BindPreferenceGrammarParser.Bool_binary_opContext)
             else:
@@ -307,8 +333,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_b_expr
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitB_expr"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterB_expr" ):
+                listener.enterB_expr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitB_expr" ):
+                listener.exitB_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitB_expr" ):
                 return visitor.visitB_expr(self)
             else:
                 return visitor.visitChildren(self)
@@ -345,10 +379,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class B_termContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.B_termContext, self).__init__(parent, invokingState)
+    class B_termContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def b_factor(self):
@@ -362,8 +398,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_b_term
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitB_term"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterB_term" ):
+                listener.enterB_term(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitB_term" ):
+                listener.exitB_term(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitB_term" ):
                 return visitor.visitB_term(self)
             else:
                 return visitor.visitChildren(self)
@@ -381,7 +425,7 @@ class BindPreferenceGrammarParser ( Parser ):
             self.state = 53
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==BindPreferenceGrammarParser.NOT:
+            if _la==15:
                 self.state = 52
                 self.unaryOp()
 
@@ -396,10 +440,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class B_factorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.B_factorContext, self).__init__(parent, invokingState)
+    class B_factorContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def boolFact(self):
@@ -413,8 +459,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_b_factor
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitB_factor"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterB_factor" ):
+                listener.enterB_factor(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitB_factor" ):
+                listener.exitB_factor(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitB_factor" ):
                 return visitor.visitB_factor(self)
             else:
                 return visitor.visitChildren(self)
@@ -430,12 +484,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.state = 59
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [BindPreferenceGrammarParser.TRUE, BindPreferenceGrammarParser.FALSE]:
+            if token in [16, 17]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 57
                 self.boolFact()
                 pass
-            elif token in [BindPreferenceGrammarParser.T__7, BindPreferenceGrammarParser.EXISTS, BindPreferenceGrammarParser.FORALL, BindPreferenceGrammarParser.SUM, BindPreferenceGrammarParser.ABS, BindPreferenceGrammarParser.VARIABLE, BindPreferenceGrammarParser.INT]:
+            elif token in [8, 20, 21, 22, 33, 36, 38]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 58
                 self.relation()
@@ -451,13 +505,15 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class RelationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.RelationContext, self).__init__(parent, invokingState)
+    class RelationContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
-        def expr(self, i=None):
+        def expr(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(BindPreferenceGrammarParser.ExprContext)
             else:
@@ -471,8 +527,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_relation
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitRelation"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRelation" ):
+                listener.enterRelation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRelation" ):
+                listener.exitRelation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRelation" ):
                 return visitor.visitRelation(self)
             else:
                 return visitor.visitChildren(self)
@@ -506,20 +570,22 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class ExprContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.ExprContext, self).__init__(parent, invokingState)
+    class ExprContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
-        def term(self, i=None):
+        def term(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(BindPreferenceGrammarParser.TermContext)
             else:
                 return self.getTypedRuleContext(BindPreferenceGrammarParser.TermContext,i)
 
 
-        def arith_binary_op(self, i=None):
+        def arith_binary_op(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(BindPreferenceGrammarParser.Arith_binary_opContext)
             else:
@@ -529,8 +595,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_expr
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitExpr"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr" ):
+                listener.enterExpr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr" ):
+                listener.exitExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr" ):
                 return visitor.visitExpr(self)
             else:
                 return visitor.visitChildren(self)
@@ -567,10 +641,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class TermContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.TermContext, self).__init__(parent, invokingState)
+    class TermContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
 
@@ -578,15 +654,15 @@ class BindPreferenceGrammarParser ( Parser ):
             return BindPreferenceGrammarParser.RULE_term
 
      
-        def copyFrom(self, ctx):
-            super(BindPreferenceGrammarParser.TermContext, self).copyFrom(ctx)
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
 
 
     class AexprQuantifierContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.TermContext)
-            super(BindPreferenceGrammarParser.AexprQuantifierContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def variable(self):
@@ -606,8 +682,16 @@ class BindPreferenceGrammarParser ( Parser ):
             return self.getTypedRuleContext(BindPreferenceGrammarParser.ObjIdContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAexprQuantifier"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAexprQuantifier" ):
+                listener.enterAexprQuantifier(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAexprQuantifier" ):
+                listener.exitAexprQuantifier(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAexprQuantifier" ):
                 return visitor.visitAexprQuantifier(self)
             else:
                 return visitor.visitChildren(self)
@@ -615,8 +699,8 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class AexprSumContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.TermContext)
-            super(BindPreferenceGrammarParser.AexprSumContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def SUM(self):
@@ -634,8 +718,16 @@ class BindPreferenceGrammarParser ( Parser ):
             return self.getTypedRuleContext(BindPreferenceGrammarParser.ObjIdContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAexprSum"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAexprSum" ):
+                listener.enterAexprSum(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAexprSum" ):
+                listener.exitAexprSum(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAexprSum" ):
                 return visitor.visitAexprSum(self)
             else:
                 return visitor.visitChildren(self)
@@ -643,19 +735,27 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class AexprBindContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.TermContext)
-            super(BindPreferenceGrammarParser.AexprBindContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
-        def variable(self, i=None):
+        def variable(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(BindPreferenceGrammarParser.VariableContext)
             else:
                 return self.getTypedRuleContext(BindPreferenceGrammarParser.VariableContext,i)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAexprBind"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAexprBind" ):
+                listener.enterAexprBind(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAexprBind" ):
+                listener.exitAexprBind(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAexprBind" ):
                 return visitor.visitAexprBind(self)
             else:
                 return visitor.visitChildren(self)
@@ -663,16 +763,24 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class AexprBracketsContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.TermContext)
-            super(BindPreferenceGrammarParser.AexprBracketsContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def b_expr(self):
             return self.getTypedRuleContext(BindPreferenceGrammarParser.B_exprContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAexprBrackets"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAexprBrackets" ):
+                listener.enterAexprBrackets(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAexprBrackets" ):
+                listener.exitAexprBrackets(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAexprBrackets" ):
                 return visitor.visitAexprBrackets(self)
             else:
                 return visitor.visitChildren(self)
@@ -680,8 +788,8 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class AexprUnaryArithmeticContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.TermContext)
-            super(BindPreferenceGrammarParser.AexprUnaryArithmeticContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def arith_unary_op(self):
@@ -691,8 +799,16 @@ class BindPreferenceGrammarParser ( Parser ):
             return self.getTypedRuleContext(BindPreferenceGrammarParser.ExprContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAexprUnaryArithmetic"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAexprUnaryArithmetic" ):
+                listener.enterAexprUnaryArithmetic(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAexprUnaryArithmetic" ):
+                listener.exitAexprUnaryArithmetic(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAexprUnaryArithmetic" ):
                 return visitor.visitAexprUnaryArithmetic(self)
             else:
                 return visitor.visitChildren(self)
@@ -700,15 +816,23 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class AexprIntContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.TermContext)
-            super(BindPreferenceGrammarParser.AexprIntContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def INT(self):
             return self.getToken(BindPreferenceGrammarParser.INT, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAexprInt"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAexprInt" ):
+                listener.enterAexprInt(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAexprInt" ):
+                listener.exitAexprInt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAexprInt" ):
                 return visitor.visitAexprInt(self)
             else:
                 return visitor.visitChildren(self)
@@ -724,12 +848,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.state = 113
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [BindPreferenceGrammarParser.EXISTS, BindPreferenceGrammarParser.FORALL]:
+            if token in [20, 21]:
                 localctx = BindPreferenceGrammarParser.AexprQuantifierContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 76
                 _la = self._input.LA(1)
-                if not(_la==BindPreferenceGrammarParser.EXISTS or _la==BindPreferenceGrammarParser.FORALL):
+                if not(_la==20 or _la==21):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -739,7 +863,7 @@ class BindPreferenceGrammarParser ( Parser ):
                 self.state = 81
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==BindPreferenceGrammarParser.T__1:
+                if _la==2:
                     self.state = 78
                     self.match(BindPreferenceGrammarParser.T__1)
                     self.state = 79
@@ -757,13 +881,13 @@ class BindPreferenceGrammarParser ( Parser ):
                 self.state = 86
                 self.b_expr()
                 pass
-            elif token in [BindPreferenceGrammarParser.INT]:
+            elif token in [38]:
                 localctx = BindPreferenceGrammarParser.AexprIntContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 88
                 self.match(BindPreferenceGrammarParser.INT)
                 pass
-            elif token in [BindPreferenceGrammarParser.VARIABLE]:
+            elif token in [36]:
                 localctx = BindPreferenceGrammarParser.AexprBindContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
                 self.state = 89
@@ -775,7 +899,7 @@ class BindPreferenceGrammarParser ( Parser ):
                 self.state = 92
                 self.variable()
                 pass
-            elif token in [BindPreferenceGrammarParser.SUM]:
+            elif token in [22]:
                 localctx = BindPreferenceGrammarParser.AexprSumContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
                 self.state = 94
@@ -785,7 +909,7 @@ class BindPreferenceGrammarParser ( Parser ):
                 self.state = 99
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==BindPreferenceGrammarParser.T__1:
+                if _la==2:
                     self.state = 96
                     self.match(BindPreferenceGrammarParser.T__1)
                     self.state = 97
@@ -803,7 +927,7 @@ class BindPreferenceGrammarParser ( Parser ):
                 self.state = 104
                 self.expr()
                 pass
-            elif token in [BindPreferenceGrammarParser.ABS]:
+            elif token in [33]:
                 localctx = BindPreferenceGrammarParser.AexprUnaryArithmeticContext(self, localctx)
                 self.enterOuterAlt(localctx, 5)
                 self.state = 106
@@ -811,7 +935,7 @@ class BindPreferenceGrammarParser ( Parser ):
                 self.state = 107
                 self.expr()
                 pass
-            elif token in [BindPreferenceGrammarParser.T__7]:
+            elif token in [8]:
                 localctx = BindPreferenceGrammarParser.AexprBracketsContext(self, localctx)
                 self.enterOuterAlt(localctx, 6)
                 self.state = 109
@@ -832,10 +956,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class ObjIdContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.ObjIdContext, self).__init__(parent, invokingState)
+    class ObjIdContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
 
@@ -843,25 +969,33 @@ class BindPreferenceGrammarParser ( Parser ):
             return BindPreferenceGrammarParser.RULE_objId
 
      
-        def copyFrom(self, ctx):
-            super(BindPreferenceGrammarParser.ObjIdContext, self).copyFrom(ctx)
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
 
 
     class AobjIDScenarioContext(ObjIdContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.ObjIdContext)
-            super(BindPreferenceGrammarParser.AobjIDScenarioContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.ObjIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
-        def ID(self, i=None):
+        def ID(self, i:int=None):
             if i is None:
                 return self.getTokens(BindPreferenceGrammarParser.ID)
             else:
                 return self.getToken(BindPreferenceGrammarParser.ID, i)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAobjIDScenario"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAobjIDScenario" ):
+                listener.enterAobjIDScenario(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAobjIDScenario" ):
+                listener.exitAobjIDScenario(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAobjIDScenario" ):
                 return visitor.visitAobjIDScenario(self)
             else:
                 return visitor.visitChildren(self)
@@ -869,8 +1003,8 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class AobjIDREContext(ObjIdContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.ObjIdContext)
-            super(BindPreferenceGrammarParser.AobjIDREContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.ObjIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def ID(self):
@@ -879,8 +1013,16 @@ class BindPreferenceGrammarParser ( Parser ):
             return self.getTypedRuleContext(BindPreferenceGrammarParser.ReContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAobjIDRE"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAobjIDRE" ):
+                listener.enterAobjIDRE(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAobjIDRE" ):
+                listener.exitAobjIDRE(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAobjIDRE" ):
                 return visitor.visitAobjIDRE(self)
             else:
                 return visitor.visitChildren(self)
@@ -888,16 +1030,24 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class AobjIDVarContext(ObjIdContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.ObjIdContext)
-            super(BindPreferenceGrammarParser.AobjIDVarContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.ObjIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def variable(self):
             return self.getTypedRuleContext(BindPreferenceGrammarParser.VariableContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAobjIDVar"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAobjIDVar" ):
+                listener.enterAobjIDVar(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAobjIDVar" ):
+                listener.exitAobjIDVar(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAobjIDVar" ):
                 return visitor.visitAobjIDVar(self)
             else:
                 return visitor.visitChildren(self)
@@ -905,15 +1055,23 @@ class BindPreferenceGrammarParser ( Parser ):
 
     class AobjIDIDContext(ObjIdContext):
 
-        def __init__(self, parser, ctx): # actually a BindPreferenceGrammarParser.ObjIdContext)
-            super(BindPreferenceGrammarParser.AobjIDIDContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a BindPreferenceGrammarParser.ObjIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def ID(self):
             return self.getToken(BindPreferenceGrammarParser.ID, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAobjIDID"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAobjIDID" ):
+                listener.enterAobjIDID(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAobjIDID" ):
+                listener.exitAobjIDID(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAobjIDID" ):
                 return visitor.visitAobjIDID(self)
             else:
                 return visitor.visitChildren(self)
@@ -977,10 +1135,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class TypeVContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.TypeVContext, self).__init__(parent, invokingState)
+    class TypeVContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def DC(self):
@@ -993,8 +1153,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_typeV
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitTypeV"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTypeV" ):
+                listener.enterTypeV(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTypeV" ):
+                listener.exitTypeV(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypeV" ):
                 return visitor.visitTypeV(self)
             else:
                 return visitor.visitChildren(self)
@@ -1010,12 +1178,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.state = 130
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [BindPreferenceGrammarParser.DC]:
+            if token in [35]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 128
                 self.match(BindPreferenceGrammarParser.DC)
                 pass
-            elif token in [BindPreferenceGrammarParser.RE]:
+            elif token in [12]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 129
                 self.re()
@@ -1031,10 +1199,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class Bool_binary_opContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.Bool_binary_opContext, self).__init__(parent, invokingState)
+    class Bool_binary_opContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def AND(self):
@@ -1052,8 +1222,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_bool_binary_op
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitBool_binary_op"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBool_binary_op" ):
+                listener.enterBool_binary_op(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBool_binary_op" ):
+                listener.exitBool_binary_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBool_binary_op" ):
                 return visitor.visitBool_binary_op(self)
             else:
                 return visitor.visitChildren(self)
@@ -1070,7 +1248,7 @@ class BindPreferenceGrammarParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 132
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BindPreferenceGrammarParser.AND) | (1 << BindPreferenceGrammarParser.OR) | (1 << BindPreferenceGrammarParser.IMPL) | (1 << BindPreferenceGrammarParser.IFF))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 811008) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1083,10 +1261,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class Arith_binary_opContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.Arith_binary_opContext, self).__init__(parent, invokingState)
+    class Arith_binary_opContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def PLUS(self):
@@ -1101,8 +1281,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_arith_binary_op
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitArith_binary_op"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArith_binary_op" ):
+                listener.enterArith_binary_op(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArith_binary_op" ):
+                listener.exitArith_binary_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArith_binary_op" ):
                 return visitor.visitArith_binary_op(self)
             else:
                 return visitor.visitChildren(self)
@@ -1119,7 +1307,7 @@ class BindPreferenceGrammarParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 134
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BindPreferenceGrammarParser.PLUS) | (1 << BindPreferenceGrammarParser.MINUS) | (1 << BindPreferenceGrammarParser.TIMES))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 7516192768) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1132,10 +1320,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class Arith_unary_opContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.Arith_unary_opContext, self).__init__(parent, invokingState)
+    class Arith_unary_opContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def ABS(self):
@@ -1144,8 +1334,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_arith_unary_op
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitArith_unary_op"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArith_unary_op" ):
+                listener.enterArith_unary_op(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArith_unary_op" ):
+                listener.exitArith_unary_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArith_unary_op" ):
                 return visitor.visitArith_unary_op(self)
             else:
                 return visitor.visitChildren(self)
@@ -1169,10 +1367,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class Comparison_opContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.Comparison_opContext, self).__init__(parent, invokingState)
+    class Comparison_opContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def LEQ(self):
@@ -1196,8 +1396,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_comparison_op
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitComparison_op"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterComparison_op" ):
+                listener.enterComparison_op(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitComparison_op" ):
+                listener.exitComparison_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComparison_op" ):
                 return visitor.visitComparison_op(self)
             else:
                 return visitor.visitChildren(self)
@@ -1214,7 +1422,7 @@ class BindPreferenceGrammarParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 138
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << BindPreferenceGrammarParser.LEQ) | (1 << BindPreferenceGrammarParser.EQ) | (1 << BindPreferenceGrammarParser.GEQ) | (1 << BindPreferenceGrammarParser.LT) | (1 << BindPreferenceGrammarParser.GT) | (1 << BindPreferenceGrammarParser.NEQ))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1056964608) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1227,10 +1435,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class UnaryOpContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.UnaryOpContext, self).__init__(parent, invokingState)
+    class UnaryOpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def NOT(self):
@@ -1239,8 +1449,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_unaryOp
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitUnaryOp"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnaryOp" ):
+                listener.enterUnaryOp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnaryOp" ):
+                listener.exitUnaryOp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryOp" ):
                 return visitor.visitUnaryOp(self)
             else:
                 return visitor.visitChildren(self)
@@ -1264,10 +1482,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class BoolFactContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.BoolFactContext, self).__init__(parent, invokingState)
+    class BoolFactContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def TRUE(self):
@@ -1279,8 +1499,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_boolFact
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitBoolFact"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBoolFact" ):
+                listener.enterBoolFact(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBoolFact" ):
+                listener.exitBoolFact(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBoolFact" ):
                 return visitor.visitBoolFact(self)
             else:
                 return visitor.visitChildren(self)
@@ -1297,7 +1525,7 @@ class BindPreferenceGrammarParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 142
             _la = self._input.LA(1)
-            if not(_la==BindPreferenceGrammarParser.TRUE or _la==BindPreferenceGrammarParser.FALSE):
+            if not(_la==16 or _la==17):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1310,10 +1538,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class VariableContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.VariableContext, self).__init__(parent, invokingState)
+    class VariableContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def VARIABLE(self):
@@ -1322,8 +1552,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_variable
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitVariable"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterVariable" ):
+                listener.enterVariable(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitVariable" ):
+                listener.exitVariable(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariable" ):
                 return visitor.visitVariable(self)
             else:
                 return visitor.visitChildren(self)
@@ -1347,10 +1585,12 @@ class BindPreferenceGrammarParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class ReContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(BindPreferenceGrammarParser.ReContext, self).__init__(parent, invokingState)
+    class ReContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def RE(self):
@@ -1359,8 +1599,16 @@ class BindPreferenceGrammarParser ( Parser ):
         def getRuleIndex(self):
             return BindPreferenceGrammarParser.RULE_re
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitRe"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRe" ):
+                listener.enterRe(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRe" ):
+                listener.exitRe(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRe" ):
                 return visitor.visitRe(self)
             else:
                 return visitor.visitChildren(self)
