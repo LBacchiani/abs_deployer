@@ -11,31 +11,34 @@ __maintainer__ = "Jacopo Mauro"
 __email__ = "mauro.jacopo@gmail.com"
 __status__ = "Prototype"
 
+import getopt
+import json
+import os
+import sys
+
 from antlr4 import *
+
+import settings
 from ABSLexer import ABSLexer
 from ABSParser import ABSParser
 from ABSVisitor import ABSVisitor
-
-import sys, getopt, os, json
-
-import settings
 
 # to allow the use of symmetry breaking constraints use a fictional resource
 # associated to every different type of DC
 fictional_resource_counter = 1
 
+
 class ABSParsingException(Exception):
-  
-  def __init__(self,value):
-    self.value = value
-  
-  def __str__(self):
-    return repr(self.value)
-  
-  
+
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return repr(self.value)
+
+
 class MyABSVisitor(ABSVisitor):
-  
-  
+
     def __init__(self):
         """
         classes to extract the annotations and smart deploy instances form the
@@ -48,34 +51,29 @@ class MyABSVisitor(ABSVisitor):
         self.module_name = ""
         self.classes = {}
         self.interfaces = {}
-  
-    
+
     def defaultResult(self):
         return ""
-  
-  
+
     def visitTerminal(self, node):
         return node.getText()
-  
-  
-    def aggregateResult(self, aggregate, nextResult):
-        if isinstance(nextResult,list):
-            return aggregate + str(nextResult)
-        else:
-            return aggregate + nextResult
 
-  
+    def aggregateResult(self, aggregate, next_result):
+        if isinstance(next_result, list):
+            return aggregate + str(next_result)
+        else:
+            return aggregate + next_result
+
     def visitErrorNode(self, node):
         token = node.getSymbol()
-        raise ABSParsingException("Erroneous Node at line "  +
-                str(token.line) + ", column " + str(token.column) + ": '" +
-                str(token.text) + "'"  )
-  
-  
+        raise ABSParsingException("Erroneous Node at line " +
+                                  str(token.line) + ", column " + str(token.column) + ": '" +
+                                  str(token.text) + "'")
+
     def visitModule_decl(self, ctx):
         self.module_name = ctx.getChild(1).accept(self).strip()
-        for i in range(3,ctx.getChildCount()):
-          ctx.getChild(i).accept(self)
+        for i in range(3, ctx.getChildCount()):
+            ctx.getChild(i).accept(self)
         return ""
 
     def visitClass_decl(self, ctx):
@@ -104,17 +102,17 @@ class MyABSVisitor(ABSVisitor):
         self.interfaces[interface_name] = interfaces
         return ""
 
-
     def visitAnnotation(self, ctx):
         """
         Collects the annotations
         """
+
         def parse_json_string_in_annotation(s):
-            s = s.strip().decode("string-escape")[1:-1]
+            s = s.strip()[1:-1].encode('utf-8').decode("unicode-escape")
             try:
-              data = json.loads(s)
+                data = json.loads(s)
             except:
-              raise ABSParsingException("Error in parsing the annotation " + s)
+                raise ABSParsingException("Error in parsing the annotation " + s)
             return data
 
         if ctx.type_use():
@@ -125,17 +123,17 @@ class MyABSVisitor(ABSVisitor):
                 self.dc_json = parse_json_string_in_annotation(ctx.pure_exp().accept(self))
                 fictional_resource_counter = 1
                 for i in self.dc_json.keys():
-                  self.dc_json[i]["num"] = settings.DEFAULT_NUMBER_OF_DC
-                  if "cost" not in self.dc_json[i]:
-                    self.dc_json[i]["cost"] = 0
-                  self.dc_json[i]["resources"]['fictional_res'] = fictional_resource_counter
-                  fictional_resource_counter += 1
-                  if "payment_interval" not in self.dc_json[i]:
-                      self.dc_json[i]["payment_interval"] = 1
+                    self.dc_json[i]["num"] = settings.DEFAULT_NUMBER_OF_DC
+                    if "cost" not in self.dc_json[i]:
+                        self.dc_json[i]["cost"] = 0
+                    self.dc_json[i]["resources"]['fictional_res'] = fictional_resource_counter
+                    fictional_resource_counter += 1
+                    if "payment_interval" not in self.dc_json[i]:
+                        self.dc_json[i]["payment_interval"] = 1
             elif name == "SmartDeployCost":
                 self.deploy_annotations.append(parse_json_string_in_annotation(ctx.pure_exp().accept(self)))
         return ""
-  
+
 
 def get_annotation_from_abs(abs_program_file):
     lexer = ABSLexer(FileStream(abs_program_file))
@@ -152,26 +150,26 @@ def get_annotation_from_abs(abs_program_file):
         visitor.classes,
         visitor.interfaces
     )
-  
+
 
 def main(argv):
-   
-  try:
-    opts, args = getopt.getopt(argv,"",[])
-  except getopt.GetoptError as err:
-    print str(err)
-    print(__doc__)
-    sys.exit(1)
-  
-  if len(args) != 1:
-    print "1 argument is required"
-    print(__doc__)
-    sys.exit(1)
-    
-  input_file = args[0]   
-  input_file = os.path.abspath(input_file) 
-  print json.dumps(get_annotation_from_abs(input_file), indent=1)
+    try:
+        opts, args = getopt.getopt(argv, "", [])
+    except getopt.GetoptError as err:
+        print(str(err))
+        print(__doc__)
+        sys.exit(1)
 
-  
+    if len(args) != 1:
+        print("1 argument is required")
+        print(__doc__)
+        sys.exit(1)
+
+    input_file = args[0]
+    input_file = os.path.abspath(input_file)
+    # print(json.dumps(get_annotation_from_abs(input_file), indent=1))
+    print(get_annotation_from_abs(input_file))  # TODO implement the same behaviour of the print above
+
+
 if __name__ == "__main__":
-  main(sys.argv[1:])
+    main(sys.argv[1:])
