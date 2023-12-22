@@ -1,59 +1,59 @@
-# Generated from DeclSpecLanguage.g4 by ANTLR 4.7
+# Generated from /Users/lorenzobacchiani/Desktop/abs_deployer/decl_spec_lang/DeclSpecLanguage.g4 by ANTLR 4.13.1
 # encoding: utf-8
-from __future__ import print_function
 from antlr4 import *
 from io import StringIO
 import sys
+if sys.version_info[1] > 5:
+	from typing import TextIO
+else:
+	from typing.io import TextIO
 
 def serializedATN():
-    with StringIO() as buf:
-        buf.write(u"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3")
-        buf.write(u"$\u008a\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t")
-        buf.write(u"\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r")
-        buf.write(u"\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\3")
-        buf.write(u"\2\3\2\3\2\3\3\3\3\3\3\3\3\7\3,\n\3\f\3\16\3/\13\3\3")
-        buf.write(u"\4\5\4\62\n\4\3\4\3\4\3\5\3\5\5\58\n\5\3\6\3\6\3\6\3")
-        buf.write(u"\6\5\6>\n\6\3\7\3\7\3\7\3\7\7\7D\n\7\f\7\16\7G\13\7\3")
-        buf.write(u"\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3")
-        buf.write(u"\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3")
-        buf.write(u"\b\5\bd\n\b\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3\n\5\nn\n\n")
-        buf.write(u"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5")
-        buf.write(u"\13z\n\13\3\f\3\f\3\r\3\r\3\16\3\16\3\17\3\17\3\20\3")
-        buf.write(u"\20\3\21\3\21\3\22\3\22\3\22\2\2\23\2\4\6\b\n\f\16\20")
-        buf.write(u"\22\24\26\30\32\34\36 \"\2\b\3\2\22\23\4\2\n\n\37 \4")
-        buf.write(u"\2\13\f\20\21\3\2\33\35\3\2\25\32\3\2\16\17\2\u0088\2")
-        buf.write(u"$\3\2\2\2\4\'\3\2\2\2\6\61\3\2\2\2\b\67\3\2\2\2\n9\3")
-        buf.write(u"\2\2\2\f?\3\2\2\2\16c\3\2\2\2\20e\3\2\2\2\22m\3\2\2\2")
-        buf.write(u"\24y\3\2\2\2\26{\3\2\2\2\30}\3\2\2\2\32\177\3\2\2\2\34")
-        buf.write(u"\u0081\3\2\2\2\36\u0083\3\2\2\2 \u0085\3\2\2\2\"\u0087")
-        buf.write(u"\3\2\2\2$%\5\4\3\2%&\7\2\2\3&\3\3\2\2\2\'-\5\6\4\2()")
-        buf.write(u"\5\30\r\2)*\5\6\4\2*,\3\2\2\2+(\3\2\2\2,/\3\2\2\2-+\3")
-        buf.write(u"\2\2\2-.\3\2\2\2.\5\3\2\2\2/-\3\2\2\2\60\62\5 \21\2\61")
-        buf.write(u"\60\3\2\2\2\61\62\3\2\2\2\62\63\3\2\2\2\63\64\5\b\5\2")
-        buf.write(u"\64\7\3\2\2\2\658\5\"\22\2\668\5\n\6\2\67\65\3\2\2\2")
-        buf.write(u"\67\66\3\2\2\28\t\3\2\2\29=\5\f\7\2:;\5\36\20\2;<\5\f")
-        buf.write(u"\7\2<>\3\2\2\2=:\3\2\2\2=>\3\2\2\2>\13\3\2\2\2?E\5\16")
-        buf.write(u"\b\2@A\5\32\16\2AB\5\16\b\2BD\3\2\2\2C@\3\2\2\2DG\3\2")
-        buf.write(u"\2\2EC\3\2\2\2EF\3\2\2\2F\r\3\2\2\2GE\3\2\2\2HI\t\2\2")
-        buf.write(u"\2IJ\5\26\f\2JK\7\3\2\2KL\5\20\t\2LM\7\4\2\2MN\5\4\3")
-        buf.write(u"\2Nd\3\2\2\2Od\7#\2\2Pd\5\24\13\2QR\5\22\n\2RS\7\5\2")
-        buf.write(u"\2ST\5\24\13\2Td\3\2\2\2UV\7\24\2\2VW\5\26\f\2WX\7\3")
-        buf.write(u"\2\2XY\5\20\t\2YZ\7\4\2\2Z[\5\f\7\2[d\3\2\2\2\\]\5\34")
-        buf.write(u"\17\2]^\5\f\7\2^d\3\2\2\2_`\7\6\2\2`a\5\4\3\2ab\7\7\2")
-        buf.write(u"\2bd\3\2\2\2cH\3\2\2\2cO\3\2\2\2cP\3\2\2\2cQ\3\2\2\2")
-        buf.write(u"cU\3\2\2\2c\\\3\2\2\2c_\3\2\2\2d\17\3\2\2\2ef\t\3\2\2")
-        buf.write(u"f\21\3\2\2\2gn\7\"\2\2hn\5\26\f\2ij\7\"\2\2jk\7\b\2\2")
-        buf.write(u"kl\7#\2\2ln\7\t\2\2mg\3\2\2\2mh\3\2\2\2mi\3\2\2\2n\23")
-        buf.write(u"\3\2\2\2oz\7\"\2\2pz\5\26\f\2qr\7\"\2\2rs\7\b\2\2st\7")
-        buf.write(u"\"\2\2tz\7\t\2\2uv\7\"\2\2vw\7\b\2\2wx\7\n\2\2xz\7\t")
-        buf.write(u"\2\2yo\3\2\2\2yp\3\2\2\2yq\3\2\2\2yu\3\2\2\2z\25\3\2")
-        buf.write(u"\2\2{|\7!\2\2|\27\3\2\2\2}~\t\4\2\2~\31\3\2\2\2\177\u0080")
-        buf.write(u"\t\5\2\2\u0080\33\3\2\2\2\u0081\u0082\7\36\2\2\u0082")
-        buf.write(u"\35\3\2\2\2\u0083\u0084\t\6\2\2\u0084\37\3\2\2\2\u0085")
-        buf.write(u"\u0086\7\r\2\2\u0086!\3\2\2\2\u0087\u0088\t\7\2\2\u0088")
-        buf.write(u"#\3\2\2\2\n-\61\67=Ecmy")
-        return buf.getvalue()
-
+    return [
+        4,1,34,136,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
+        2,14,7,14,2,15,7,15,2,16,7,16,1,0,1,0,1,0,1,1,1,1,1,1,1,1,5,1,42,
+        8,1,10,1,12,1,45,9,1,1,2,3,2,48,8,2,1,2,1,2,1,3,1,3,3,3,54,8,3,1,
+        4,1,4,1,4,1,4,3,4,60,8,4,1,5,1,5,1,5,1,5,5,5,66,8,5,10,5,12,5,69,
+        9,5,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,
+        1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,3,6,98,8,6,1,7,1,
+        7,1,8,1,8,1,8,1,8,1,8,1,8,3,8,108,8,8,1,9,1,9,1,9,1,9,1,9,1,9,1,
+        9,1,9,1,9,1,9,3,9,120,8,9,1,10,1,10,1,11,1,11,1,12,1,12,1,13,1,13,
+        1,14,1,14,1,15,1,15,1,16,1,16,1,16,0,0,17,0,2,4,6,8,10,12,14,16,
+        18,20,22,24,26,28,30,32,0,6,1,0,16,17,2,0,8,8,29,30,2,0,9,10,14,
+        15,1,0,25,27,1,0,19,24,1,0,12,13,134,0,34,1,0,0,0,2,37,1,0,0,0,4,
+        47,1,0,0,0,6,53,1,0,0,0,8,55,1,0,0,0,10,61,1,0,0,0,12,97,1,0,0,0,
+        14,99,1,0,0,0,16,107,1,0,0,0,18,119,1,0,0,0,20,121,1,0,0,0,22,123,
+        1,0,0,0,24,125,1,0,0,0,26,127,1,0,0,0,28,129,1,0,0,0,30,131,1,0,
+        0,0,32,133,1,0,0,0,34,35,3,2,1,0,35,36,5,0,0,1,36,1,1,0,0,0,37,43,
+        3,4,2,0,38,39,3,22,11,0,39,40,3,4,2,0,40,42,1,0,0,0,41,38,1,0,0,
+        0,42,45,1,0,0,0,43,41,1,0,0,0,43,44,1,0,0,0,44,3,1,0,0,0,45,43,1,
+        0,0,0,46,48,3,30,15,0,47,46,1,0,0,0,47,48,1,0,0,0,48,49,1,0,0,0,
+        49,50,3,6,3,0,50,5,1,0,0,0,51,54,3,32,16,0,52,54,3,8,4,0,53,51,1,
+        0,0,0,53,52,1,0,0,0,54,7,1,0,0,0,55,59,3,10,5,0,56,57,3,28,14,0,
+        57,58,3,10,5,0,58,60,1,0,0,0,59,56,1,0,0,0,59,60,1,0,0,0,60,9,1,
+        0,0,0,61,67,3,12,6,0,62,63,3,24,12,0,63,64,3,12,6,0,64,66,1,0,0,
+        0,65,62,1,0,0,0,66,69,1,0,0,0,67,65,1,0,0,0,67,68,1,0,0,0,68,11,
+        1,0,0,0,69,67,1,0,0,0,70,71,7,0,0,0,71,72,3,20,10,0,72,73,5,1,0,
+        0,73,74,3,14,7,0,74,75,5,2,0,0,75,76,3,2,1,0,76,98,1,0,0,0,77,98,
+        5,33,0,0,78,98,3,18,9,0,79,80,3,16,8,0,80,81,5,3,0,0,81,82,3,18,
+        9,0,82,98,1,0,0,0,83,84,5,18,0,0,84,85,3,20,10,0,85,86,5,1,0,0,86,
+        87,3,14,7,0,87,88,5,2,0,0,88,89,3,10,5,0,89,98,1,0,0,0,90,91,3,26,
+        13,0,91,92,3,10,5,0,92,98,1,0,0,0,93,94,5,4,0,0,94,95,3,2,1,0,95,
+        96,5,5,0,0,96,98,1,0,0,0,97,70,1,0,0,0,97,77,1,0,0,0,97,78,1,0,0,
+        0,97,79,1,0,0,0,97,83,1,0,0,0,97,90,1,0,0,0,97,93,1,0,0,0,98,13,
+        1,0,0,0,99,100,7,1,0,0,100,15,1,0,0,0,101,108,5,32,0,0,102,108,3,
+        20,10,0,103,104,5,32,0,0,104,105,5,6,0,0,105,106,5,33,0,0,106,108,
+        5,7,0,0,107,101,1,0,0,0,107,102,1,0,0,0,107,103,1,0,0,0,108,17,1,
+        0,0,0,109,120,5,32,0,0,110,120,3,20,10,0,111,112,5,32,0,0,112,113,
+        5,6,0,0,113,114,5,32,0,0,114,120,5,7,0,0,115,116,5,32,0,0,116,117,
+        5,6,0,0,117,118,5,8,0,0,118,120,5,7,0,0,119,109,1,0,0,0,119,110,
+        1,0,0,0,119,111,1,0,0,0,119,115,1,0,0,0,120,19,1,0,0,0,121,122,5,
+        31,0,0,122,21,1,0,0,0,123,124,7,2,0,0,124,23,1,0,0,0,125,126,7,3,
+        0,0,126,25,1,0,0,0,127,128,5,28,0,0,128,27,1,0,0,0,129,130,7,4,0,
+        0,130,29,1,0,0,0,131,132,5,11,0,0,132,31,1,0,0,0,133,134,7,5,0,0,
+        134,33,1,0,0,0,8,43,47,53,59,67,97,107,119
+    ]
 
 class DeclSpecLanguageParser ( Parser ):
 
@@ -65,20 +65,18 @@ class DeclSpecLanguageParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ u"<INVALID>", u"'in'", u"':'", u"'.'", u"'('", u"')'", 
-                     u"'['", u"']'", u"<INVALID>", u"'and'", u"'or'", u"'not'", 
-                     u"'true'", u"'false'", u"'impl'", u"'iff'", u"'exists'", 
-                     u"'forall'", u"'sum'", u"'<='", u"'='", u"'>='", u"'<'", 
-                     u"'>'", u"'!='", u"'+'", u"'-'", u"'*'", u"'abs'", 
-                     u"'obj'", u"'DC'" ]
+    literalNames = [ "<INVALID>", "'in'", "':'", "'.'", "'('", "')'", "'['", 
+                     "']'", "<INVALID>", "'and'", "'or'", "'not'", "'true'", 
+                     "'false'", "'impl'", "'iff'", "'exists'", "'forall'", 
+                     "'sum'", "'<='", "'='", "'>='", "'<'", "'>'", "'!='", 
+                     "'+'", "'-'", "'*'", "'abs'", "'obj'", "'DC'" ]
 
-    symbolicNames = [ u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"RE", u"AND", u"OR", u"NOT", u"TRUE", u"FALSE", u"IMPL", 
-                      u"IFF", u"EXISTS", u"FORALL", u"SUM", u"LEQ", u"EQ", 
-                      u"GEQ", u"LT", u"GT", u"NEQ", u"PLUS", u"MINUS", u"TIMES", 
-                      u"ABS", u"OBJ", u"DC", u"VARIABLE", u"ID", u"INT", 
-                      u"WS" ]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "RE", "AND", "OR", "NOT", "TRUE", "FALSE", "IMPL", 
+                      "IFF", "EXISTS", "FORALL", "SUM", "LEQ", "EQ", "GEQ", 
+                      "LT", "GT", "NEQ", "PLUS", "MINUS", "TIMES", "ABS", 
+                      "OBJ", "DC", "VARIABLE", "ID", "INT", "WS" ]
 
     RULE_statement = 0
     RULE_b_expr = 1
@@ -98,10 +96,10 @@ class DeclSpecLanguageParser ( Parser ):
     RULE_unaryOp = 15
     RULE_boolFact = 16
 
-    ruleNames =  [ u"statement", u"b_expr", u"b_term", u"b_factor", u"relation", 
-                   u"expr", u"term", u"typeV", u"dcId", u"objId", u"variable", 
-                   u"bool_binary_op", u"arith_binary_op", u"arith_unary_op", 
-                   u"comparison_op", u"unaryOp", u"boolFact" ]
+    ruleNames =  [ "statement", "b_expr", "b_term", "b_factor", "relation", 
+                   "expr", "term", "typeV", "dcId", "objId", "variable", 
+                   "bool_binary_op", "arith_binary_op", "arith_unary_op", 
+                   "comparison_op", "unaryOp", "boolFact" ]
 
     EOF = Token.EOF
     T__0=1
@@ -139,18 +137,20 @@ class DeclSpecLanguageParser ( Parser ):
     INT=33
     WS=34
 
-    def __init__(self, input, output=sys.stdout):
-        super(DeclSpecLanguageParser, self).__init__(input, output=output)
-        self.checkVersion("4.7")
+    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
+        super().__init__(input, output)
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
 
 
-    class StatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.StatementContext, self).__init__(parent, invokingState)
+    class StatementContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def b_expr(self):
@@ -163,8 +163,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_statement
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitStatement"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterStatement" ):
+                listener.enterStatement(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitStatement" ):
+                listener.exitStatement(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStatement" ):
                 return visitor.visitStatement(self)
             else:
                 return visitor.visitChildren(self)
@@ -190,20 +198,22 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class B_exprContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.B_exprContext, self).__init__(parent, invokingState)
+    class B_exprContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
-        def b_term(self, i=None):
+        def b_term(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(DeclSpecLanguageParser.B_termContext)
             else:
                 return self.getTypedRuleContext(DeclSpecLanguageParser.B_termContext,i)
 
 
-        def bool_binary_op(self, i=None):
+        def bool_binary_op(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(DeclSpecLanguageParser.Bool_binary_opContext)
             else:
@@ -213,8 +223,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_b_expr
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitB_expr"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterB_expr" ):
+                listener.enterB_expr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitB_expr" ):
+                listener.exitB_expr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitB_expr" ):
                 return visitor.visitB_expr(self)
             else:
                 return visitor.visitChildren(self)
@@ -251,10 +269,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class B_termContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.B_termContext, self).__init__(parent, invokingState)
+    class B_termContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def b_factor(self):
@@ -268,8 +288,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_b_term
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitB_term"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterB_term" ):
+                listener.enterB_term(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitB_term" ):
+                listener.exitB_term(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitB_term" ):
                 return visitor.visitB_term(self)
             else:
                 return visitor.visitChildren(self)
@@ -287,7 +315,7 @@ class DeclSpecLanguageParser ( Parser ):
             self.state = 47
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==DeclSpecLanguageParser.NOT:
+            if _la==11:
                 self.state = 46
                 self.unaryOp()
 
@@ -302,10 +330,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class B_factorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.B_factorContext, self).__init__(parent, invokingState)
+    class B_factorContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def boolFact(self):
@@ -319,8 +349,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_b_factor
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitB_factor"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterB_factor" ):
+                listener.enterB_factor(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitB_factor" ):
+                listener.exitB_factor(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitB_factor" ):
                 return visitor.visitB_factor(self)
             else:
                 return visitor.visitChildren(self)
@@ -336,12 +374,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.state = 53
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [DeclSpecLanguageParser.TRUE, DeclSpecLanguageParser.FALSE]:
+            if token in [12, 13]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 51
                 self.boolFact()
                 pass
-            elif token in [DeclSpecLanguageParser.T__3, DeclSpecLanguageParser.EXISTS, DeclSpecLanguageParser.FORALL, DeclSpecLanguageParser.SUM, DeclSpecLanguageParser.ABS, DeclSpecLanguageParser.VARIABLE, DeclSpecLanguageParser.ID, DeclSpecLanguageParser.INT]:
+            elif token in [4, 16, 17, 18, 28, 31, 32, 33]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 52
                 self.relation()
@@ -357,13 +395,15 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class RelationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.RelationContext, self).__init__(parent, invokingState)
+    class RelationContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
-        def expr(self, i=None):
+        def expr(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(DeclSpecLanguageParser.ExprContext)
             else:
@@ -377,8 +417,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_relation
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitRelation"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRelation" ):
+                listener.enterRelation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRelation" ):
+                listener.exitRelation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRelation" ):
                 return visitor.visitRelation(self)
             else:
                 return visitor.visitChildren(self)
@@ -412,20 +460,22 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class ExprContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.ExprContext, self).__init__(parent, invokingState)
+    class ExprContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
-        def term(self, i=None):
+        def term(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(DeclSpecLanguageParser.TermContext)
             else:
                 return self.getTypedRuleContext(DeclSpecLanguageParser.TermContext,i)
 
 
-        def arith_binary_op(self, i=None):
+        def arith_binary_op(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(DeclSpecLanguageParser.Arith_binary_opContext)
             else:
@@ -435,8 +485,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_expr
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitExpr"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr" ):
+                listener.enterExpr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr" ):
+                listener.exitExpr(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr" ):
                 return visitor.visitExpr(self)
             else:
                 return visitor.visitChildren(self)
@@ -473,10 +531,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class TermContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.TermContext, self).__init__(parent, invokingState)
+    class TermContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
 
@@ -484,22 +544,30 @@ class DeclSpecLanguageParser ( Parser ):
             return DeclSpecLanguageParser.RULE_term
 
      
-        def copyFrom(self, ctx):
-            super(DeclSpecLanguageParser.TermContext, self).copyFrom(ctx)
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
 
 
     class AtermIntContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.TermContext)
-            super(DeclSpecLanguageParser.AtermIntContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def INT(self):
             return self.getToken(DeclSpecLanguageParser.INT, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAtermInt"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAtermInt" ):
+                listener.enterAtermInt(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAtermInt" ):
+                listener.exitAtermInt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtermInt" ):
                 return visitor.visitAtermInt(self)
             else:
                 return visitor.visitChildren(self)
@@ -507,16 +575,24 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AtermIdContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.TermContext)
-            super(DeclSpecLanguageParser.AtermIdContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def objId(self):
             return self.getTypedRuleContext(DeclSpecLanguageParser.ObjIdContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAtermId"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAtermId" ):
+                listener.enterAtermId(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAtermId" ):
+                listener.exitAtermId(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtermId" ):
                 return visitor.visitAtermId(self)
             else:
                 return visitor.visitChildren(self)
@@ -524,8 +600,8 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AtermDCObjContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.TermContext)
-            super(DeclSpecLanguageParser.AtermDCObjContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def dcId(self):
@@ -535,8 +611,16 @@ class DeclSpecLanguageParser ( Parser ):
             return self.getTypedRuleContext(DeclSpecLanguageParser.ObjIdContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAtermDCObj"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAtermDCObj" ):
+                listener.enterAtermDCObj(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAtermDCObj" ):
+                listener.exitAtermDCObj(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtermDCObj" ):
                 return visitor.visitAtermDCObj(self)
             else:
                 return visitor.visitChildren(self)
@@ -544,8 +628,8 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AtermQuantifierContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.TermContext)
-            super(DeclSpecLanguageParser.AtermQuantifierContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def variable(self):
@@ -562,8 +646,16 @@ class DeclSpecLanguageParser ( Parser ):
         def FORALL(self):
             return self.getToken(DeclSpecLanguageParser.FORALL, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAtermQuantifier"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAtermQuantifier" ):
+                listener.enterAtermQuantifier(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAtermQuantifier" ):
+                listener.exitAtermQuantifier(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtermQuantifier" ):
                 return visitor.visitAtermQuantifier(self)
             else:
                 return visitor.visitChildren(self)
@@ -571,16 +663,24 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AtermBracketsContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.TermContext)
-            super(DeclSpecLanguageParser.AtermBracketsContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def b_expr(self):
             return self.getTypedRuleContext(DeclSpecLanguageParser.B_exprContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAtermBrackets"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAtermBrackets" ):
+                listener.enterAtermBrackets(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAtermBrackets" ):
+                listener.exitAtermBrackets(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtermBrackets" ):
                 return visitor.visitAtermBrackets(self)
             else:
                 return visitor.visitChildren(self)
@@ -588,8 +688,8 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AexprUnaryArithmeticContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.TermContext)
-            super(DeclSpecLanguageParser.AexprUnaryArithmeticContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def arith_unary_op(self):
@@ -599,8 +699,16 @@ class DeclSpecLanguageParser ( Parser ):
             return self.getTypedRuleContext(DeclSpecLanguageParser.ExprContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAexprUnaryArithmetic"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAexprUnaryArithmetic" ):
+                listener.enterAexprUnaryArithmetic(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAexprUnaryArithmetic" ):
+                listener.exitAexprUnaryArithmetic(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAexprUnaryArithmetic" ):
                 return visitor.visitAexprUnaryArithmetic(self)
             else:
                 return visitor.visitChildren(self)
@@ -608,8 +716,8 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AtermSumContext(TermContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.TermContext)
-            super(DeclSpecLanguageParser.AtermSumContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.TermContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def SUM(self):
@@ -624,8 +732,16 @@ class DeclSpecLanguageParser ( Parser ):
             return self.getTypedRuleContext(DeclSpecLanguageParser.ExprContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAtermSum"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAtermSum" ):
+                listener.enterAtermSum(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAtermSum" ):
+                listener.exitAtermSum(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtermSum" ):
                 return visitor.visitAtermSum(self)
             else:
                 return visitor.visitChildren(self)
@@ -646,7 +762,7 @@ class DeclSpecLanguageParser ( Parser ):
                 self.enterOuterAlt(localctx, 1)
                 self.state = 70
                 _la = self._input.LA(1)
-                if not(_la==DeclSpecLanguageParser.EXISTS or _la==DeclSpecLanguageParser.FORALL):
+                if not(_la==16 or _la==17):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -734,10 +850,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class TypeVContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.TypeVContext, self).__init__(parent, invokingState)
+    class TypeVContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def OBJ(self):
@@ -752,8 +870,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_typeV
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitTypeV"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTypeV" ):
+                listener.enterTypeV(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTypeV" ):
+                listener.exitTypeV(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypeV" ):
                 return visitor.visitTypeV(self)
             else:
                 return visitor.visitChildren(self)
@@ -770,7 +896,7 @@ class DeclSpecLanguageParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 99
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DeclSpecLanguageParser.RE) | (1 << DeclSpecLanguageParser.OBJ) | (1 << DeclSpecLanguageParser.DC))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1610612992) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -783,10 +909,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class DcIdContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.DcIdContext, self).__init__(parent, invokingState)
+    class DcIdContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
 
@@ -794,22 +922,30 @@ class DeclSpecLanguageParser ( Parser ):
             return DeclSpecLanguageParser.RULE_dcId
 
      
-        def copyFrom(self, ctx):
-            super(DeclSpecLanguageParser.DcIdContext, self).copyFrom(ctx)
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
 
 
     class AdcIDIDContext(DcIdContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.DcIdContext)
-            super(DeclSpecLanguageParser.AdcIDIDContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.DcIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def ID(self):
             return self.getToken(DeclSpecLanguageParser.ID, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAdcIDID"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAdcIDID" ):
+                listener.enterAdcIDID(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAdcIDID" ):
+                listener.exitAdcIDID(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAdcIDID" ):
                 return visitor.visitAdcIDID(self)
             else:
                 return visitor.visitChildren(self)
@@ -817,8 +953,8 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AdcIDNumContext(DcIdContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.DcIdContext)
-            super(DeclSpecLanguageParser.AdcIDNumContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.DcIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def ID(self):
@@ -826,8 +962,16 @@ class DeclSpecLanguageParser ( Parser ):
         def INT(self):
             return self.getToken(DeclSpecLanguageParser.INT, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAdcIDNum"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAdcIDNum" ):
+                listener.enterAdcIDNum(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAdcIDNum" ):
+                listener.exitAdcIDNum(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAdcIDNum" ):
                 return visitor.visitAdcIDNum(self)
             else:
                 return visitor.visitChildren(self)
@@ -835,16 +979,24 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AdcIDVarContext(DcIdContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.DcIdContext)
-            super(DeclSpecLanguageParser.AdcIDVarContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.DcIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def variable(self):
             return self.getTypedRuleContext(DeclSpecLanguageParser.VariableContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAdcIDVar"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAdcIDVar" ):
+                listener.enterAdcIDVar(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAdcIDVar" ):
+                listener.exitAdcIDVar(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAdcIDVar" ):
                 return visitor.visitAdcIDVar(self)
             else:
                 return visitor.visitChildren(self)
@@ -895,10 +1047,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class ObjIdContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.ObjIdContext, self).__init__(parent, invokingState)
+    class ObjIdContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
 
@@ -906,25 +1060,33 @@ class DeclSpecLanguageParser ( Parser ):
             return DeclSpecLanguageParser.RULE_objId
 
      
-        def copyFrom(self, ctx):
-            super(DeclSpecLanguageParser.ObjIdContext, self).copyFrom(ctx)
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
 
 
     class AobjIDScenarioContext(ObjIdContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.ObjIdContext)
-            super(DeclSpecLanguageParser.AobjIDScenarioContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.ObjIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
-        def ID(self, i=None):
+        def ID(self, i:int=None):
             if i is None:
                 return self.getTokens(DeclSpecLanguageParser.ID)
             else:
                 return self.getToken(DeclSpecLanguageParser.ID, i)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAobjIDScenario"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAobjIDScenario" ):
+                listener.enterAobjIDScenario(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAobjIDScenario" ):
+                listener.exitAobjIDScenario(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAobjIDScenario" ):
                 return visitor.visitAobjIDScenario(self)
             else:
                 return visitor.visitChildren(self)
@@ -932,8 +1094,8 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AobjIDREContext(ObjIdContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.ObjIdContext)
-            super(DeclSpecLanguageParser.AobjIDREContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.ObjIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def ID(self):
@@ -941,8 +1103,16 @@ class DeclSpecLanguageParser ( Parser ):
         def RE(self):
             return self.getToken(DeclSpecLanguageParser.RE, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAobjIDRE"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAobjIDRE" ):
+                listener.enterAobjIDRE(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAobjIDRE" ):
+                listener.exitAobjIDRE(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAobjIDRE" ):
                 return visitor.visitAobjIDRE(self)
             else:
                 return visitor.visitChildren(self)
@@ -950,16 +1120,24 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AobjIDVarContext(ObjIdContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.ObjIdContext)
-            super(DeclSpecLanguageParser.AobjIDVarContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.ObjIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def variable(self):
             return self.getTypedRuleContext(DeclSpecLanguageParser.VariableContext,0)
 
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAobjIDVar"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAobjIDVar" ):
+                listener.enterAobjIDVar(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAobjIDVar" ):
+                listener.exitAobjIDVar(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAobjIDVar" ):
                 return visitor.visitAobjIDVar(self)
             else:
                 return visitor.visitChildren(self)
@@ -967,15 +1145,23 @@ class DeclSpecLanguageParser ( Parser ):
 
     class AobjIDIDContext(ObjIdContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.ObjIdContext)
-            super(DeclSpecLanguageParser.AobjIDIDContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.ObjIdContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def ID(self):
             return self.getToken(DeclSpecLanguageParser.ID, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAobjIDID"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAobjIDID" ):
+                listener.enterAobjIDID(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAobjIDID" ):
+                listener.exitAobjIDID(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAobjIDID" ):
                 return visitor.visitAobjIDID(self)
             else:
                 return visitor.visitChildren(self)
@@ -1039,10 +1225,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class VariableContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.VariableContext, self).__init__(parent, invokingState)
+    class VariableContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
 
@@ -1050,22 +1238,30 @@ class DeclSpecLanguageParser ( Parser ):
             return DeclSpecLanguageParser.RULE_variable
 
      
-        def copyFrom(self, ctx):
-            super(DeclSpecLanguageParser.VariableContext, self).copyFrom(ctx)
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
 
 
 
     class AvariableContext(VariableContext):
 
-        def __init__(self, parser, ctx): # actually a DeclSpecLanguageParser.VariableContext)
-            super(DeclSpecLanguageParser.AvariableContext, self).__init__(parser)
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DeclSpecLanguageParser.VariableContext
+            super().__init__(parser)
             self.copyFrom(ctx)
 
         def VARIABLE(self):
             return self.getToken(DeclSpecLanguageParser.VARIABLE, 0)
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitAvariable"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAvariable" ):
+                listener.enterAvariable(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAvariable" ):
+                listener.exitAvariable(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAvariable" ):
                 return visitor.visitAvariable(self)
             else:
                 return visitor.visitChildren(self)
@@ -1089,10 +1285,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class Bool_binary_opContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.Bool_binary_opContext, self).__init__(parent, invokingState)
+    class Bool_binary_opContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def AND(self):
@@ -1110,8 +1308,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_bool_binary_op
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitBool_binary_op"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBool_binary_op" ):
+                listener.enterBool_binary_op(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBool_binary_op" ):
+                listener.exitBool_binary_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBool_binary_op" ):
                 return visitor.visitBool_binary_op(self)
             else:
                 return visitor.visitChildren(self)
@@ -1128,7 +1334,7 @@ class DeclSpecLanguageParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 123
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DeclSpecLanguageParser.AND) | (1 << DeclSpecLanguageParser.OR) | (1 << DeclSpecLanguageParser.IMPL) | (1 << DeclSpecLanguageParser.IFF))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 50688) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1141,10 +1347,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class Arith_binary_opContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.Arith_binary_opContext, self).__init__(parent, invokingState)
+    class Arith_binary_opContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def PLUS(self):
@@ -1159,8 +1367,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_arith_binary_op
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitArith_binary_op"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArith_binary_op" ):
+                listener.enterArith_binary_op(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArith_binary_op" ):
+                listener.exitArith_binary_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArith_binary_op" ):
                 return visitor.visitArith_binary_op(self)
             else:
                 return visitor.visitChildren(self)
@@ -1177,7 +1393,7 @@ class DeclSpecLanguageParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 125
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DeclSpecLanguageParser.PLUS) | (1 << DeclSpecLanguageParser.MINUS) | (1 << DeclSpecLanguageParser.TIMES))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 234881024) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1190,10 +1406,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class Arith_unary_opContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.Arith_unary_opContext, self).__init__(parent, invokingState)
+    class Arith_unary_opContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def ABS(self):
@@ -1202,8 +1420,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_arith_unary_op
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitArith_unary_op"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArith_unary_op" ):
+                listener.enterArith_unary_op(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArith_unary_op" ):
+                listener.exitArith_unary_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArith_unary_op" ):
                 return visitor.visitArith_unary_op(self)
             else:
                 return visitor.visitChildren(self)
@@ -1227,10 +1453,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class Comparison_opContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.Comparison_opContext, self).__init__(parent, invokingState)
+    class Comparison_opContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def LEQ(self):
@@ -1254,8 +1482,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_comparison_op
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitComparison_op"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterComparison_op" ):
+                listener.enterComparison_op(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitComparison_op" ):
+                listener.exitComparison_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComparison_op" ):
                 return visitor.visitComparison_op(self)
             else:
                 return visitor.visitChildren(self)
@@ -1272,7 +1508,7 @@ class DeclSpecLanguageParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 129
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DeclSpecLanguageParser.LEQ) | (1 << DeclSpecLanguageParser.EQ) | (1 << DeclSpecLanguageParser.GEQ) | (1 << DeclSpecLanguageParser.LT) | (1 << DeclSpecLanguageParser.GT) | (1 << DeclSpecLanguageParser.NEQ))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 33030144) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1285,10 +1521,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class UnaryOpContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.UnaryOpContext, self).__init__(parent, invokingState)
+    class UnaryOpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def NOT(self):
@@ -1297,8 +1535,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_unaryOp
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitUnaryOp"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnaryOp" ):
+                listener.enterUnaryOp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnaryOp" ):
+                listener.exitUnaryOp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryOp" ):
                 return visitor.visitUnaryOp(self)
             else:
                 return visitor.visitChildren(self)
@@ -1322,10 +1568,12 @@ class DeclSpecLanguageParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class BoolFactContext(ParserRuleContext):
 
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(DeclSpecLanguageParser.BoolFactContext, self).__init__(parent, invokingState)
+    class BoolFactContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
             self.parser = parser
 
         def TRUE(self):
@@ -1337,8 +1585,16 @@ class DeclSpecLanguageParser ( Parser ):
         def getRuleIndex(self):
             return DeclSpecLanguageParser.RULE_boolFact
 
-        def accept(self, visitor):
-            if hasattr(visitor, "visitBoolFact"):
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBoolFact" ):
+                listener.enterBoolFact(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBoolFact" ):
+                listener.exitBoolFact(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBoolFact" ):
                 return visitor.visitBoolFact(self)
             else:
                 return visitor.visitChildren(self)
@@ -1355,7 +1611,7 @@ class DeclSpecLanguageParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 133
             _la = self._input.LA(1)
-            if not(_la==DeclSpecLanguageParser.TRUE or _la==DeclSpecLanguageParser.FALSE):
+            if not(_la==12 or _la==13):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
