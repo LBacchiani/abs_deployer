@@ -13,7 +13,7 @@ Usage: abs_deployer.py [<options>] <abs program files>
     -p, --port <port>
         zephyrus container port
 
-It requires the installation of zephyrus2 available from git@bitbucket.org:jacopomauro/zephyrus2.git    
+It requires a container running zephyrus2, see https://bitbucket.org/jacopomauro/zephyrus2/src/master/
 
 Scenarios names have to differ from DC names
 
@@ -22,8 +22,7 @@ The first abs file is the program containing all the resource cost annotations
 Requirements:
   Python packages
    - toposort https://pypi.python.org/simple/topsort/
-  A container running zephyrus2
-  
+
   The absfrontend.jar should be in CLASSPATH  
 """
 __author__ = "Jacopo Mauro"
@@ -35,26 +34,26 @@ __email__ = "mauro.jacopo@gmail.com"
 __status__ = "Prototype"
 
 
-import json
-import math
-import uuid
-from subprocess import Popen, PIPE
-import sys, getopt
-import os
-import logging as log
-import logging as log
-import signal
-import psutil
 import copy
-from antlr4 import *
+import getopt
+import json
+import logging as log
+import math
+import os
+import signal
+import sys
+import uuid
 from functools import reduce
-import settings
-import code_generation
-import bind_preferences_translator
-import decl_spec_lang.decl_spec_lang as decl_spec_lang
-import ABS.abs_extractor as abs_extractor
+
+import psutil
+from antlr4 import *
 from requests import post as requests_post
 
+import ABS.abs_extractor as abs_extractor
+import bind_preferences_translator
+import code_generation
+import decl_spec_lang.decl_spec_lang as decl_spec_lang
+import settings
 
 DEVNULL = open(os.devnull, 'wb')
 
@@ -72,6 +71,7 @@ VERBOSE = False
 #log.basicConfig(filename='example.log',level=log.DEBUG)
 #log.basicConfig(level=log.DEBUG)
 
+
 def usage():
     """Print usage"""
     print(__doc__)
@@ -87,17 +87,17 @@ def remove_dots(obj):
     Keeps only the part of the string after the dot to a json object
     """
     if isinstance(obj, str):
-        return obj.rsplit('.',1)[-1]
+        return obj.rsplit('.', 1)[-1]
     elif isinstance(obj, dict):
         new = {}
         for k in obj.keys():
             if isinstance(k, str):
-                new[k.rsplit('.',1)[-1]] = remove_dots(obj[k])
+                new[k.rsplit('.', 1)[-1]] = remove_dots(obj[k])
             else:
                 new[k] = remove_dots(obj[k])
         return new
-    elif isinstance(obj,list):
-        return map(remove_dots,obj)
+    elif isinstance(obj, list):
+        return map(remove_dots, obj)
     else:
         return obj
 
@@ -114,7 +114,7 @@ def send_signal_proc(signal, proc):
     Sends the specified signal to the process, and to all its children.
     """
     if proc.poll() is None:
-        for p in proc.children(recursive = True):
+        for p in proc.children(recursive=True):
             try:
                 p.send_signal(signal)
             except psutil.NoSuchProcess:
@@ -172,7 +172,7 @@ def get_abs_class_names(deploy_annotations):
 #   return (classes,resources,interfaces)
 
 
-def generate_zep_input_from_annotations(deploy_annotations,classes):
+def generate_zep_input_from_annotations(deploy_annotations, classes):
     """
     Generate the partial input for zephyrus starting from the json internal
     representation extracted from the abs program.
@@ -236,12 +236,12 @@ def initialDC(annotation):
                 zep[name]["resources"][j] = i[j]
 
         dc_into_name[(name,0)] = i["name"]
-        name_into_dc[i["name"]] = (name,0)
+        name_into_dc[i["name"]] = (name, 0)
 
     return zep, dc_into_name, name_into_dc
 
 
-def replace_default_cloud_provider_DC(data,smart_annotation):
+def replace_default_cloud_provider_DC(data, smart_annotation):
     """
     Rewrites the number of DC if the users does not want to use the
     DEFAULT_NUMBER_OF_DC
@@ -278,7 +278,7 @@ def initialObjects(annotation):
     return zep, obj_into_name, name_into_obj
 
 
-def add_fictional_bindings_with_initial_objects(obj_into_name,zep_last_conf):
+def add_fictional_bindings_with_initial_objects(obj_into_name, zep_last_conf):
     """
     this function modifies the final configuraiton to allow bindings with initial objects
     """
@@ -292,9 +292,10 @@ def allow_incoming_bindings_for_initial_objects(annotation, name_into_obj, zep):
     """
     this function inject a -1 as a requirer for the intial objects
     this allows the binder to add bindings also to the intial object
-    :param the intial json annotation
-    :param the zephyrus json specification
-    :return: the zephyrus json specification
+    :param annotation the intial json annotation
+    :param name_into_obj the zephyrus json specification
+    :param: zep the initial zephyrus json specification
+    :return: the modified zephyrus json specification
     """
     for i in annotation["obj"]:
         if "methods" in i:
@@ -310,7 +311,7 @@ def allow_more_bindings_for_list_parameters(deploy_annotations, zep):
     """
     this function inject a -1 as a requirer for the objects having as input paramter a list
     this allows the binder to add more than required number of bindings
-    :param annotation: the intial json annotation
+    :param deploy_annotations: the intial json annotation
     :param zep: the zephyrus json specification
     :return: the zephyrus json specification
     """
@@ -359,9 +360,10 @@ def main(argv):
     zephyrus_solver = 'lex-chuffed'
     dot_file_prefix = ''
     zephyrus_port = ''
+    global KEEP
 
     try:
-        opts, args = getopt.getopt(argv,"ho:vp:ks:", ["help", "ofile=", "verbose", "keep", "solver", "port"])
+        opts, args = getopt.getopt(argv, "ho:vp:ks:", ["help", "ofile=", "verbose", "keep", "solver", "port"])
     except getopt.GetoptError as err:
         print(str(err))
         usage()
@@ -373,7 +375,6 @@ def main(argv):
         elif opt in ("-o", "--ofile"):
             output_file = arg
         elif opt in ("-k", "--keep"):
-            global KEEP
             KEEP = True
         elif opt in ("-v", "--verbose"):
             log.basicConfig(format="%(levelname)s: %(message)s", level=log.DEBUG)
@@ -541,8 +542,7 @@ def main(argv):
         log.debug(json.dumps(zep_last_conf, indent=1))
         data = allow_incoming_bindings_for_initial_objects(i, name_into_obj, data)
         data = allow_more_bindings_for_list_parameters(deploy_annotations, data)
-        to_send = {'zephyrus_in_file': data,
-                   'binding_in_file': zep_last_conf}
+        to_send = {'zephyrus_in_file': data, 'binding_in_file': zep_last_conf}
         if options:
             to_send['options'] = [x.strip() for x in options.split(',')]
         opt_bindings = requests_post(query_url, data=json.dumps(to_send)).json()

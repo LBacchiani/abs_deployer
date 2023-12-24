@@ -18,6 +18,7 @@ import sys
 # during the undeploy to remove references
 to_remove_later_bindings = []
 waiting_time = 0
+are_new_DC_created = False
 
 ################################
 # Auxiliary functions for the topsorting and fast data retrieval
@@ -124,20 +125,25 @@ def get_providers(bindings, deployment):
 ################################
 
 
-def print_class_signature(smart_dep_annotation,out):
+def print_class_signature(smart_dep_annotation, out):
     """
     Prints the first line of the class
     """
-    out.write("class " + smart_dep_annotation["id"] + "(");
-    out.write("CloudProvider cloudProvider")
+    out.write("class " + smart_dep_annotation["id"] + "(")
+    is_first_parameter_written = False
+    if are_new_DC_created:
+        out.write("CloudProvider cloudProvider")
+        is_first_parameter_written = True
     for i in smart_dep_annotation["DC"]:
-        out.write(", DeploymentComponent " + i["name"])
+        if is_first_parameter_written: out.write(", ")
+        else: is_first_parameter_written = True
+        out.write("DeploymentComponent " + i["name"])
     for i in smart_dep_annotation["obj"]:
         out.write(", " + i["interface"] + " " + i["name"])
     out.write(") implements " + smart_dep_annotation["id"] + "{\n")
 
 
-def print_list_and_get_methods(interfaces,dc_json,out):
+def print_list_and_get_methods(interfaces, dc_json, out):
     """
     Print the definition of the lists to store the DC and the objs
     """
@@ -146,8 +152,9 @@ def print_list_and_get_methods(interfaces,dc_json,out):
         out.write("\tList<" + i + "> ls_" + i + " = Nil;\n")
     out.write("\tList<List<DeploymentComponent>> ls_ls_DeploymentComponent = Nil;\n")
     out.write("\tList<DeploymentComponent> ls_DeploymentComponent = Nil;\n")
-    print_cloud_provider_modification(dc_json, out)
-    out.write("\n")
+    if are_new_DC_created:
+        print_cloud_provider_modification(dc_json, out)
+        out.write("\n")
     for i in interfaces:
         out.write("\tList<" + i + "> get" + i + "() { return ls_" + i + "; }\n")
     out.write("\tList<DeploymentComponent> getDeploymentComponent() { return ls_DeploymentComponent; }\n\n")
@@ -190,7 +197,9 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
                                  deploy_annotations,classes_annotation,
                                  out):
     dep = "\tUnit deploy_aux() {\n"
-    dep += "\t\tMap<DeploymentComponent,Rat> speedPatchMap = map[];\n"
+    if are_new_DC_created:
+        dep += "\t\tMap<DeploymentComponent,Rat> speedPatchMap = map[];\n"
+
     undep = "\tUnit undeploy_aux() {\n"
 
     # start by deploying new DC
@@ -202,9 +211,10 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
                 dep += "\t\tDeploymentComponent " + dc_to_abs_names[(i,int(j))]
                 dep += " = cloudProvider.launchInstanceNamed(\"" + i + "\");\n"
                 dep += "\t\tls_DeploymentComponent = Cons("
-                dep += dc_to_abs_names[(i,int(j))] + ",ls_DeploymentComponent);\n"
+                dep += dc_to_abs_names[(i, int(j))] + ",ls_DeploymentComponent);\n"
                 ############################################ runtime patch ###########################
-                dep += "\t\tspeedPatchMap = put(speedPatchMap," + dc_to_abs_names[(i,int(j))] + ",0);\n"
+                if are_new_DC_created:
+                    dep += "\t\tspeedPatchMap = put(speedPatchMap," + dc_to_abs_names[(i, int(j))] + ",0);\n"
     ######################################################################################
     # decide the order to create the obj and creating useful maps
     obj_to_abs_name = get_map_obj_abs_name(zep_last_conf,initial_obj_into_name)
@@ -283,7 +293,8 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
                 dep += ", ".join(ls) + ");\n"
                 cores = [x["scenarios"][0]["cost"]["Cores"] for x in deploy_annotations if x["class"] == class_name]
                 dep += "\t\tRat coreRequired_" + obj_to_abs_name[j] + " = " + str(cores[0]) + ";\n"
-                dep += "\t\tspeedPatchMap = put(speedPatchMap, " + dc_to_abs_names[(dcname,dcnum)] + ", fromJust(lookup(speedPatchMap," + dc_to_abs_names[(dcname,dcnum)] + ")) + coreRequired_" + obj_to_abs_name[j] + ");\n"
+                if are_new_DC_created:
+                    dep += "\t\tspeedPatchMap = put(speedPatchMap, " + dc_to_abs_names[(dcname,dcnum)] + ", fromJust(lookup(speedPatchMap," + dc_to_abs_names[(dcname,dcnum)] + ")) + coreRequired_" + obj_to_abs_name[j] + ");\n"
                 # adding obj into the list
                 interfaces = classes_annotation[class_name]
                 for k in interfaces:
@@ -316,9 +327,8 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
                                                          method["remove"]["name"],
                                                          sundep))
     ####################### PATCH #######################
-    dep += "\t\tthis!patchSpeed(speedPatchMap);\n"
-    is_waiting_time_needed = len(list(filter(lambda x : not x.startswith(settings.SEPARATOR), zep_last_conf["locations"].keys()))) > 0
-    if is_waiting_time_needed and waiting_time > 0: dep += "\t\tawait duration(waiting_time,waiting_time);\n"
+    if are_new_DC_created: dep += "\t\tthis!patchSpeed(speedPatchMap);\n"
+    if are_new_DC_created and waiting_time > 0: dep += "\t\tawait duration(waiting_time,waiting_time);\n"
     ######################################################
     # add the remaining optional bindings following the list priority
     if "add_method_priorities" in smart_dep_annotation:
@@ -340,11 +350,13 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
 
     for (_,_,s) in to_remove_later_bindings:
         undep += s
-    # we trigger the killInstance from the cloud provider
-    undep += "\t\twhile ( !isEmpty(ls_DeploymentComponent) ) {\n"
-    undep +="\t\t\tcloudProvider.shutdownInstance(head(ls_DeploymentComponent));\n"
-    undep +="\t\t\tls_DeploymentComponent = tail(ls_DeploymentComponent);\n"
-    undep +="\t\t}\n"
+    # we trigger the killInstance from the cloud provider if DCs are created in
+    # this orchestration
+    if are_new_DC_created:
+        undep += "\t\twhile ( !isEmpty(ls_DeploymentComponent) ) {\n"
+        undep +="\t\t\tcloudProvider.shutdownInstance(head(ls_DeploymentComponent));\n"
+        undep +="\t\t\tls_DeploymentComponent = tail(ls_DeploymentComponent);\n"
+        undep +="\t\t}\n"
 
     # ends
     dep += "\t}\n"
@@ -364,15 +376,19 @@ def print_class(smart_dep_annotation,interfaces,
     """
     Prints the class implementing the SmartDeployInt interface
     """
-    print_module_and_interface(module_name,interfaces,smart_dep_annotation["id"],out)
+    global are_new_DC_created
+    are_new_DC_created = len(list(filter(lambda x: not x.startswith(settings.SEPARATOR),
+                                         zep_last_conf["locations"].keys()))) > 0
+
+    print_module_and_interface(module_name,interfaces,smart_dep_annotation["id"], out)
     out.write("\n")
-    print_class_signature(smart_dep_annotation,out)
+    print_class_signature(smart_dep_annotation, out)
     out.write("\n")
-    print_list_and_get_methods(interfaces,dc_json,out)
+    print_list_and_get_methods(interfaces, dc_json, out)
     out.write("\n")
-    print_deploy_undeploy_method(smart_dep_annotation,zep_last_conf, bindings_opt_out, initial_dc_into_name, initial_obj_into_name, deploy_annotations, classes_annotation,out)
+    print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf, bindings_opt_out, initial_dc_into_name, initial_obj_into_name, deploy_annotations, classes_annotation,out)
     ######  runtime patch ########
-    print_patch_speed(out)
+    if are_new_DC_created: print_patch_speed(out)
     ############################
     out.write("}\n")
 
@@ -384,6 +400,7 @@ def print_cloud_provider_modification(dc_json, out):
     ############# modified for time patching #############
     dcDescription = "\t{\n"
     max_time = 0
+
     for i in dc_json.keys():
         if "initial_DC" not in i:
             dcDescription += '\t\tcloudProvider.addInstanceDescription(Pair("' + str(i) + '",\n'
@@ -407,7 +424,7 @@ def print_cloud_provider_modification(dc_json, out):
     out.write(dcDescription)
     out.write("\t}\n")
 
-def print_module_and_interface(module_name,interfaces,name,out):
+def print_module_and_interface(module_name, interfaces, name,out):
     """
     Prints the interface
     """
