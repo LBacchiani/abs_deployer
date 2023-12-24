@@ -11,7 +11,7 @@ Usage: abs_deployer.py [<options>] <abs program files>
     -s, --solver <solver>
       chose the solver to use for zephyrus. Choices are gecode, smt, ortools, or chuffed. Default gecode
     -p, --port <port>
-        zephyrus container port
+        zephyrus container port (integer value)
 
 It requires a container running zephyrus2, see https://bitbucket.org/jacopomauro/zephyrus2/src/master/
 
@@ -358,12 +358,12 @@ def main(argv):
     """
     output_file = ''
     zephyrus_solver = 'lex-chuffed'
-    dot_file_prefix = ''
+    # dot_file_prefix = ''
     zephyrus_port = ''
     global KEEP
 
     try:
-        opts, args = getopt.getopt(argv, "ho:vp:ks:", ["help", "ofile=", "verbose", "keep", "solver", "port"])
+        opts, args = getopt.getopt(argv, "ho:vp:ks:", ["help", "ofile=", "verbose", "keep", "solver", "port="])
     except getopt.GetoptError as err:
         print(str(err))
         usage()
@@ -402,8 +402,14 @@ def main(argv):
         usage()
         sys.exit(1)
 
-    if not zephyrus_port:
+    if not zephyrus_port :
         print("zephyrus port is required")
+        sys.exit(1)
+
+    try:
+        zephyrus_port = int(zephyrus_port)
+    except ValueError:
+        print("zephyrus port must be an int")
         sys.exit(1)
 
     input_files = [os.path.abspath(x) for x in args]
@@ -514,7 +520,7 @@ def main(argv):
         log.debug(json.dumps(data,indent=1))
 
         log.debug("Querying Zephyrus...")
-        query_url = 'http://localhost:{}/process'.format(int(zephyrus_port))
+        query_url = 'http://localhost:{}/process'.format(zephyrus_port)
         options = "--run-only-zephyrus,--solver," + zephyrus_solver
         zep_input = copy.deepcopy(data)
         if KEEP:
