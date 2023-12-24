@@ -168,7 +168,6 @@ def print_list_and_get_methods(interfaces, dc_json, out):
     out.write("\t\tthis.deploy_aux();\n")
     out.write("\t}\n\n")
 
-
     out.write("\tUnit undeploy() {\n")
     out.write("\t\tif (ls_ls_DeploymentComponent != Nil) {\n")
     out.write("\t\t\tthis.undeploy_aux();\n")
@@ -186,11 +185,6 @@ def print_list_and_get_methods(interfaces, dc_json, out):
         out.write("\t\t\tls_ls_" + i + " = tail(ls_ls_" + i + ");\n")
     out.write("\t\t}\n")
     out.write("\t}\n\n")
-
-def print_undeploy_method(smart_dep_annotation,interfaces,out):
-    global to_remove_later_bindings
-    out.write("\tUnit undeploy() {\n")
-    out.write("\t}\n")
 
 def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_bindings,
                                  initial_dc_into_name, initial_obj_into_name,
