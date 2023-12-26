@@ -40,7 +40,7 @@ import json
 import logging as log
 import math
 import os
-import signal
+# import signal
 import sys
 import uuid
 from functools import reduce
@@ -55,10 +55,10 @@ import code_generation
 import decl_spec_lang.decl_spec_lang as decl_spec_lang
 import settings
 
-DEVNULL = open(os.devnull, 'wb')
+# DEVNULL = open(os.devnull, 'wb')
 
 # List of the temp files.
-TMP_FILES = []
+# TMP_FILES = []
 
 # List of the running solvers.
 RUNNING_SOLVERS = []
@@ -125,20 +125,20 @@ def send_signal_proc(signal, proc):
             pass
 
 
-def clean():
-    """
-    Utility for (possibly) cleaning temporary files and killing the solvers
-    processes at the end of the solving process (even when the termination is
-    forced externally).
-    """
-    global RUNNING_SOLVERS
-    for solver in RUNNING_SOLVERS:
-        send_signal_proc(signal.SIGKILL, solver)
-    # Possibly remove temporary files.
-    if not KEEP:
-        for f in TMP_FILES:
-            if os.path.exists(f):
-                os.remove(f)
+# def clean():
+#     """
+#     Utility for (possibly) cleaning temporary files and killing the solvers
+#     processes at the end of the solving process (even when the termination is
+#     forced externally).
+#     """
+#     global RUNNING_SOLVERS
+#     for solver in RUNNING_SOLVERS:
+#         send_signal_proc(signal.SIGKILL, solver)
+#     # Possibly remove temporary files.
+#     if not KEEP:
+#         for f in TMP_FILES:
+#             if os.path.exists(f):
+#                 os.remove(f)
 
 
 def get_abs_class_names(deploy_annotations):
@@ -327,27 +327,27 @@ def allow_more_bindings_for_list_parameters(deploy_annotations, zep):
     return zep
 
 
-def extract_last_solution(inFile, outFile):
-    """
-    Extracts from a file the last solution saving it in another file.
-    Rerturns true if a solutions is found.
-    """
-    solution = False
-    sol = ""
-
-    for line in reversed(open(inFile,'r').readlines()):
-        if not solution:
-            if line.startswith("----------"):
-                solution = True
-        else:
-            if line.startswith("----------"):
-                break
-            else:
-                sol = line + sol
-
-    with open(outFile, 'w') as f:
-        f.write(sol)
-    return solution
+# def extract_last_solution(inFile, outFile):
+#     """
+#     Extracts from a file the last solution saving it in another file.
+#     Rerturns true if a solutions is found.
+#     """
+#     solution = False
+#     sol = ""
+#
+#     for line in reversed(open(inFile,'r').readlines()):
+#         if not solution:
+#             if line.startswith("----------"):
+#                 solution = True
+#         else:
+#             if line.startswith("----------"):
+#                 break
+#             else:
+#                 sol = line + sol
+#
+#     with open(outFile, 'w') as f:
+#         f.write(sol)
+#     return solution
 
 
 def main(argv):
@@ -392,7 +392,7 @@ def main(argv):
                 print("Solver {} not recognized".format(arg))
                 usage()
                 sys.exit(1)
-        #elif opt in ('-d', '--dotfiles'):
+        # elif opt in ('-d', '--dotfiles'):
         #    dot_file_prefix = arg
         elif opt in ('-p', '--port'):
             zephyrus_port = arg
@@ -402,14 +402,15 @@ def main(argv):
         usage()
         sys.exit(1)
 
-    if not zephyrus_port :
-        print("zephyrus port is required")
+    if not zephyrus_port:
+        print("Zephyrus port is required")
+        usage()
         sys.exit(1)
 
     try:
         zephyrus_port = int(zephyrus_port)
     except ValueError:
-        print("zephyrus port must be an int")
+        print("Zephyrus port must be an Int")
         sys.exit(1)
 
     input_files = [os.path.abspath(x) for x in args]
@@ -417,13 +418,13 @@ def main(argv):
     if output_file:
         out_stream = open(output_file, "w")
 
-    global TMP_FILES
-    pid = str(os.getpgid(0))
-    script_directory = os.path.dirname(os.path.realpath(__file__))
+    # global TMP_FILES
+    # pid = str(os.getpgid(0))
+    # script_directory = os.path.dirname(os.path.realpath(__file__))
 
     log.info("Extract SmartDeployment, SmartDeployCloudProvider, SmartDeployCost  annotations and classes info")
     try:
-        (smart_dep_json, dc_json, deploy_annotations, module_name,classes,interfaces) = abs_extractor.get_annotation_from_abs(input_files[0])
+        smart_dep_json, dc_json, deploy_annotations, module_name, classes, interfaces = abs_extractor.get_annotation_from_abs(input_files[0])
     except ValueError:
         log.critical("Parsing error in JSON smart deployment annotations")
         log.critical("Exiting")
@@ -445,8 +446,7 @@ def main(argv):
             del(classes[i])
 
     if set(classes_names) != set(classes.keys()):
-        log.critical("SmartDeployCost annotation and classes defined do not match: " +
-                     str(classes_names) + " differs from " + str(classes.keys()))
+        log.critical("SmartDeployCost annotation and classes defined do not match: " + str(classes_names) + " differs from " + str(classes.keys()))
         log.critical("Exiting")
         sys.exit(1)
 
@@ -455,7 +455,7 @@ def main(argv):
         log.critical("Exiting")
         sys.exit(1)
 
-    #compute the transitive closure of interfaces
+    # compute the transitive closure of interfaces
     # main interface stays in the first position
     for i in classes.keys():
         to_process = set(classes[i])
@@ -512,8 +512,7 @@ def main(argv):
 
         log.info("Parsing and adding bind preferences")
         if "bind preferences" in i:
-            data["bind preferences"] = list(map(lambda x: bind_preferences_translator.translate_preference(x,name_into_dc,
-                                                                                                           name_into_obj,get_abs_class_names(deploy_annotations)),i["bind preferences"]))
+            data["bind preferences"] = list(map(lambda x: bind_preferences_translator.translate_preference(x, name_into_dc, name_into_obj, get_abs_class_names(deploy_annotations)), i["bind preferences"]))
 
         #######CHANGES FOR PORTED VERSION############
         log.debug("Zephyrus input")
@@ -630,7 +629,8 @@ def main(argv):
                                     interface_names,
                                     zep_last_conf,
                                     opt_bindings["optimized_bindings"],
-                                    deploy_annotations, classes,
+                                    deploy_annotations,
+                                    classes,
                                     dc_into_name,
                                     obj_into_name,
                                     module_name,
@@ -642,8 +642,8 @@ def main(argv):
 
     # log.info("Print producline info")
     # code_generation.print_productline(out_stream)
-    log.info("Clean.")
-    clean()
+    # log.info("Clean.")
+    # clean()
     log.info("Program Succesfully Ended")
 
 
