@@ -286,8 +286,8 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
                         ls.append(s)
                 dep += ", ".join(ls) + ");\n"
                 cores = [x["scenarios"][0]["cost"]["Cores"] for x in deploy_annotations if x["class"] == class_name]
-                dep += "\t\tRat coreRequired_" + obj_to_abs_name[j] + " = " + str(cores[0]) + ";\n"
-                if are_new_DC_created:
+                if are_new_DC_created and not dcname.startswith(settings.SEPARATOR):
+                    dep += "\t\tRat coreRequired_" + obj_to_abs_name[j] + " = " + str(cores[0]) + ";\n"
                     dep += "\t\tspeedPatchMap = put(speedPatchMap, " + dc_to_abs_names[(dcname,dcnum)] + ", fromJust(lookup(speedPatchMap," + dc_to_abs_names[(dcname,dcnum)] + ")) + coreRequired_" + obj_to_abs_name[j] + ");\n"
                 # adding obj into the list
                 interfaces = classes_annotation[class_name]
