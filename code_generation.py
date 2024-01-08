@@ -210,6 +210,7 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
                 if are_new_DC_created:
                     dep += "\t\tspeedPatchMap = put(speedPatchMap," + dc_to_abs_names[(i, int(j))] + ",0);\n"
     ######################################################################################
+    if are_new_DC_created and waiting_time > 0: dep += "\t\tawait duration(waiting_time,waiting_time);\n"
     # decide the order to create the obj and creating useful maps
     obj_to_abs_name = get_map_obj_abs_name(zep_last_conf,initial_obj_into_name)
     class_to_signature = get_map_class_signature(deploy_annotations)
@@ -322,7 +323,6 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
                                                          sundep))
     ####################### PATCH #######################
     if are_new_DC_created: dep += "\t\tthis!patchSpeed(speedPatchMap);\n"
-    if are_new_DC_created and waiting_time > 0: dep += "\t\tawait duration(waiting_time,waiting_time);\n"
     ######################################################
     # add the remaining optional bindings following the list priority
     if "add_method_priorities" in smart_dep_annotation:
