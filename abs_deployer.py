@@ -429,7 +429,6 @@ def main(argv):
         log.critical("Parsing error in JSON smart deployment annotations")
         log.critical("Exiting")
         sys.exit(1)
-
     # uniform the cost of the Cloud instances
     payment_interval = [dc_json[i]["payment_interval"] for i in dc_json]
     mul = reduce(lcm, payment_interval, 1)

@@ -228,6 +228,10 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
             methods = [x["methods"] for x in scenarios[0] if x["name"] == scenario_name]
             assert(len(methods) == 1)
             methods = methods[0]
+            #modified here
+            if i["port"] in [x["type"] for x in scenarios[0][0]['sig']]:
+                bindings.append(i)
+
             if i["port"] in [x["add"]["param_type"] for x in methods]:
                 prov = obj_to_abs_name[(i["prov_location"], i["prov_location_num"], i["prov_comp"], i["prov_comp_num"])]
                 req = obj_to_abs_name[(i["req_location"], i["req_location_num"], i["req_comp"], i["req_comp_num"])]
@@ -240,8 +244,9 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
                                                      add_rem["remove"]["name"],
                                                      "\t\t" + req + "." + add_rem["remove"]["name"] + "(" +
                                                      (prov if "param_type" in add_rem["remove"] else "") + ");\n"))
-            else:
-                bindings.append(i)
+            #else:
+                #bindings.append(i)
+        ###until here####
         else: # initial object as a requirer
             bindings.append(i)
 
