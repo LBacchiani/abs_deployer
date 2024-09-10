@@ -231,7 +231,7 @@ def print_deploy_undeploy_method(smart_dep_annotation, zep_last_conf,all_binding
             if i["port"] in [x["type"] for x in scenarios[0][0]['sig']]:
                 bindings.append(i)
 
-            elif i["port"] in [x["add"]["param_type"] for x in methods]:
+            if i["port"] in [x["add"]["param_type"] for x in methods]:
                 prov = obj_to_abs_name[(i["prov_location"], i["prov_location_num"], i["prov_comp"], i["prov_comp_num"])]
                 req = obj_to_abs_name[(i["req_location"], i["req_location_num"], i["req_comp"], i["req_comp_num"])]
                 add_rem = [y for y in methods if y["add"]["param_type"] == i["port"]][0]
